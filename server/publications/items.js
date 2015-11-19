@@ -11,5 +11,5 @@ Meteor.publishComposite("items", function() {
     //     }
     //   }
     // ]
-  }
+  };
 });

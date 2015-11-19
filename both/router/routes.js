@@ -1,12 +1,26 @@
+// Home Route
 Router.route('/', {
-  name: 'landing'
+  name: 'home'
 });
 
+// Dashboard route
 Router.route('/dashboard', {
   name: 'dashboard',
-  controller: 'DashboardController'
+  waitOn: function() {
+    return this.subscribe('items');
+  },
+  data: {
+    items: Items.find({})
+  },
+  onBeforeAction: function (pause) {
+    AccountsTemplates.ensureSignedIn.call(this, pause);
+  },
+  onAfterAction: function () {
+
+  }
 });
 
-Router.plugin('ensureSignedIn', {
-  only: ['dashboard']
+// Profile Route
+Router.route('/profile', {
+  name: 'profile'
 });
