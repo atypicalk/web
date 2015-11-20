@@ -3,7 +3,6 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-meteor-platform
 coffeescript
 less
 spiderable
@@ -22,3 +21,22 @@ useraccounts:bootstrap
 cunneen:mailgun
 materialize:materialize
 
+# bower dependencies
+mquandalle:bower
+
+standard-minifiers
+meteor-base
+mobile-experience
+mongo
+blaze-html-templates
+session
+jquery
+tracker
+logging
+reload
+random
+ejson
+spacebars
+check
+mrt:modernizr-meteor
+useraccounts:iron-routing
