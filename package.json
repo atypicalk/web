@@ -4,7 +4,7 @@
   "description": "Application description.",
   "scripts": {
     "dev": "meteor --settings settings-dev.json",
-    "stage": "modulus env set METEOR_SETTINGS \"$(cat settings-stage.json)\" -p 'petpal-stage' && modulus deploy -f -p 'petpal-stage'",
-    "prod": "modulus env set METEOR_SETTINGS \"$(cat settings-prod.json)\" -p 'petpal-prod' && modulus deploy -f -p 'petpal-prod'"
+    "stage": "modulus env set METEOR_SETTINGS \"$(cat settings-stage.json)\" -p 'petpal-stage' && modulus deploy -p 'petpal-stage'",
+    "prod": "modulus env set METEOR_SETTINGS \"$(cat settings-prod.json)\" -p 'petpal-prod' && modulus deploy -p 'petpal-prod'"
   }
 }
