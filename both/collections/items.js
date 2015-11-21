@@ -1,3 +1,7 @@
+//TODO: remove package "autopublish"
+// it is for prototyping and auto-publishes
+// all documents to any client
+
 // Define Collection
 Items = new Mongo.Collection('items');
 

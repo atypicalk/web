@@ -40,3 +40,5 @@ spacebars
 check
 mrt:modernizr-meteor
 useraccounts:iron-routing
+autopublish
+aldeed:collection2

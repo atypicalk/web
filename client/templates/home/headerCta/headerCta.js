@@ -5,6 +5,10 @@ Template.headerCta.helpers({
 
 	emails: function () {
 		return EmailCollect.find({});
+	},
+
+	email: function () {
+		return Session.get('email');
 	}
 });
 
@@ -14,11 +18,14 @@ Template.headerCta.events({
 
     var emailInput = e.target.email;
     var email = emailInput.value;
+    var emailValid = validateEmail(email);
 
-    // console.log('emailcollect >>',email,EmailCollect.find({}));
-    
-    Meteor.call('addEmailCollect', email);
-
-    emailInput.value = '';
+    if (emailValid) {
+	    Meteor.call('addEmailCollect', email);
+	    Session.set('email', email);
+    	emailInput.value = '';
+    } else {
+    	console.log('INVALID!',email);
+    }
   }
 });

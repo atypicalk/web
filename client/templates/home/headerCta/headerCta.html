@@ -1,4 +1,9 @@
 <template name="headerCta">
+	{{#if email}}
+	<div class="thanks">
+		<h3 style="color:#FFF">Thank you <span style="color: cyan">{{email}}</span>. Brace yourself for SPAM!</h3>
+	</div>
+	{{else}}
 	<form class="form-email">
 		<div class="input-field">
 			<input placeholder="Find your pet friends by email, username, pet name" id="first_name" name="email" type="text" class="validate"/>
@@ -7,4 +12,12 @@
 			<i class="fa fa-paw white-text text-center"></i>
 		</button>
 	</form>
+	{{/if}}
+	<!-- 
+	<div>
+		{{#each emails}}
+			{{email}}<br/>
+		{{/each}}
+	</div> 
+	-->
 </template>

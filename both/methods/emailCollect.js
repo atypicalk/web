@@ -1,7 +1,11 @@
-Meteor.methods({
-	addEmailCollect: function (email) {
-		EmailCollect.insert({
-			email: email
-		})
-	}
-})
+if (Meteor.isServer) {
+	Meteor.methods({
+		addEmailCollect: function (email) {
+			return EmailCollect.insert({
+				email: email
+			}, {
+				validate: true
+			})
+		}
+	});
+}
