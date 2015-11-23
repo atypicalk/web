@@ -44,8 +44,4 @@ if (Meteor.isClient) {
 			});
 		});
 	});
-
-	Template.landingJumbotron.helpers({
-
-	});
 }

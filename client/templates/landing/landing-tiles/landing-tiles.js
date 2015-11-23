@@ -1,11 +1,11 @@
-Template.landingJumbotron.onRendered(function() {
+Template.landingTiles.onRendered(function() {
 
 });
 
-Template.landingSubheader.helpers({
+Template.landingTiles.helpers({
 	
 });
 
-Template.landingJumbotron.events({
+Template.landingTiles.events({
   
 });
