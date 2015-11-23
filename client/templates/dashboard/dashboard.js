@@ -1,6 +1,6 @@
-Template.dashboard.rendered = function() {
+Template.dashboard.onRendered(function() {
 
-};
+});
 
 Template.dashboard.events({
   "click [data-action='add-item']": function (e) {

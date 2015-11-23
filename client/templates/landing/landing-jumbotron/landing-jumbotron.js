@@ -1,4 +1,4 @@
-Template.headerCta.helpers({
+Template.landingJumbotron.helpers({
 	validate: function () {
 		console.log('hoho validate!');
 	},
@@ -12,7 +12,7 @@ Template.headerCta.helpers({
 	}
 });
 
-Template.headerCta.events({
+Template.landingJumbotron.events({
   'submit .form-email': function (e) {
     e.preventDefault();
 
@@ -29,3 +29,23 @@ Template.headerCta.events({
     }
   }
 });
+
+
+if (Meteor.isClient) {
+
+	Template.landingJumbotron.onRendered(function() {
+
+		this.$('.header-video').each(function(i, elem) {
+			headerVideo = new HeaderVideo({
+				element: elem,
+				media: '.header-video__media',
+				playTrigger: '.header-video__play-trigger',
+				closeTrigger: '.header-video__close-trigger'
+			});
+		});
+	});
+
+	Template.landingJumbotron.helpers({
+
+	});
+}

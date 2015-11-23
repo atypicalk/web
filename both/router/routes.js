@@ -1,6 +1,6 @@
 // Home Route
 Router.route('/', {
-  name: 'home'
+  name: 'landing'
 });
 
 // Dashboard route
@@ -18,6 +18,13 @@ Router.route('/dashboard', {
   onAfterAction: function () {
 
   }
+});
+
+Router.route('/admin', {
+  name: 'admin',
+  // data: {
+  //   emails: EmailCollect.find({})
+  // },
 });
 
 // Profile Route

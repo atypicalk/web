@@ -1,0 +1,40 @@
+<template name="landingJumbotron">
+	<div class="row landing-jumbotron" style="position:relative; margin-bottom:0;">
+
+		<!-- BG VIDEO OR IMAGE -->
+		<div class="header-video">
+			<img src="images/pet-pal-cover-photo.jpg" 
+				class="header-video__media" 
+				data-video-URL="https://www.youtube.com/embed/Scxs7L0vhZ4" 
+				data-teaser="video/teaser-video" 
+				data-video-width="560" 
+				data-video-height="315" />
+		</div>
+
+		<div class="petpal-logo">
+			{{> headerLogo}}
+		</div>
+
+		<!-- TEXT AND CTA -->
+		<div class="center-abs" style="color: #FFF; padding: 0 20px;">
+			<h2 style="text-align: center;">Connecting people through their pets</h2>
+				{{#if email}}
+				<div class="thanks">
+					<h3 style="color:#FFF">Thank you <span style="color: cyan">{{email}}</span>. Brace yourself for SPAM!</h3>
+				</div>
+				{{else}}
+				<form class="form-email" style="max-width: 340px; margin: 0 auto;">
+					<div class="input-group">
+						<input class="form-control" placeholder="Find your pet friends by name or email" id="first_name" name="email" type="text"/>
+						<span class="input-group-btn">
+							<button class="btn btn-primary" type="submit" name="action">
+								<span>Fetch!</span>
+								<i class="fa fa-paw"></i>
+							</button>
+						</span>
+					</div>
+				</form>
+				{{/if}}
+		</div>
+	</div>
+</template>
