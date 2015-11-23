@@ -12,9 +12,9 @@ Router.route('/dashboard', {
   data: {
     items: Items.find({})
   },
-  onBeforeAction: function (pause) {
-    AccountsTemplates.ensureSignedIn.call(this, pause);
-  },
+  // onBeforeAction: function (pause) {
+    // AccountsTemplates.ensureSignedIn.call(this, pause);
+  // },
   onAfterAction: function () {
 
   }
