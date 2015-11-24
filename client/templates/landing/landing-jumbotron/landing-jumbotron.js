@@ -22,8 +22,15 @@ Template.landingJumbotron.events({
     var emailValid = validateEmail(email);
 
     if (emailValid) {
-	    Meteor.call('addEmailCollect', email);
-    	emailInput.value = '';
+	    Meteor.call('createPhantomUser', email, function (error) {
+	    	if (error) {
+	    		console.log('error!', error);
+	    		return;
+	    	}
+
+	    	Session.set('email', email)
+	    	emailInput.value = '';
+	    });
     }
   }
 });

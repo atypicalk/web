@@ -9,5 +9,9 @@ Router.plugin('loading', {loadingTemplate: 'loading'});
 Router.plugin('dataNotFound', {dataNotFoundTemplate: 'notFound'});
 
 // Accounts Config
-AccountsTemplates.configureRoute('signIn', {layoutTemplate: 'appLayout'});
-AccountsTemplates.configureRoute('signUp', {layoutTemplate: 'appLayout'});
+// AccountsTemplates.configureRoute('signIn', {layoutTemplate: 'appLayout'});
+// AccountsTemplates.configureRoute('signUp', {layoutTemplate: 'appLayout'});
+
+Accounts.config({
+    forbidClientAccountCreation : false
+});

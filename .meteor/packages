@@ -17,7 +17,6 @@ reywood:publish-composite
 mrt:moment
 mrt:underscore-string-latest
 matb33:collection-hooks
-useraccounts:bootstrap
 cunneen:mailgun
 
 # bower dependencies
@@ -38,8 +37,6 @@ ejson
 spacebars
 check
 mrt:modernizr-meteor
-useraccounts:iron-routing
-autopublish
 aldeed:collection2
 email
 mdg:camera

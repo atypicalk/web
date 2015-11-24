@@ -3,7 +3,7 @@
 		<div class="page-header">
 			<h1>Admin</h1>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-12">
 			<h2>Users</h2>
 			<div class="page-actions pull-right">
 				<btn class="btn btn-primary" data-toggle="modal" data-target="#addUserModal">+ Add User</btn>
@@ -14,33 +14,33 @@
 					<tr>
 						<th>#</th>
 						<th>Email</th>
+						<th>User Type</th>
 						<th>User ID</th>
 						<th>Created At</th>
 					</tr>
 				</thead>
 				<tbody>
-					{{#each emails}}
+					{{#each usersData}}
 						<tr>
 							<td>{{ increment @index }}</td>
-							<td>{{ email }}</td>
+							<td>{{ emails.[0].address }}</td>
+							<!-- <td>{{ profile.isPhantom }}</td> -->
+							<td>
+								{{#if profile.isPhantom}}
+									Phantom
+								{{else}}
+									Password Set - Unauthenticated
+								{{/if}}
+							</td>
 							<td>{{ _id }}</td>
 							<td>{{ createdAt }}</td>
 						</tr>
 					{{/each}}
 				</tbody>
 			</table>
-			<!-- 
-			<ul class="list-group">
-				{{#each emails}}
-					<li class="list-group-item">
-						<span style="padding-right:10px;">{{ increment @index }} - {{ email }}</span>
-						<span class="label label-default">{{ _id }}</span>
-					</li>
-				{{/each}}
-			</ul>
-			 -->
 		</div>
 	</div>
+
 	<!-- Modal -->
 	<div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="Add User">
 		<div class="modal-dialog" role="document">
@@ -56,8 +56,11 @@
 							<input type="text" class="form-control" name="email" placeholder="Email Address">
 						</div>
 						<div class="form-group">
-							<label>Password</label>
+							<label>Password*</label>
 							<input type="password" class="form-control" name="password" placeholder="Password">
+						</div>
+						<div class="alert alert-warning">
+							<p>*Not setting a password will create a Phantom User, with "isPhantom = true" in their profile (for email collection only)</p>
 						</div>
 					</div>
 					<div class="modal-footer">
