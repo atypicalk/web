@@ -9,7 +9,8 @@ Template.landingJumbotron.helpers({
 
 	email: function () {
 		return Session.get('email');
-	}
+	},
+
 });
 
 Template.landingJumbotron.events({
@@ -22,10 +23,7 @@ Template.landingJumbotron.events({
 
     if (emailValid) {
 	    Meteor.call('addEmailCollect', email);
-	    Session.set('email', email);
     	emailInput.value = '';
-    } else {
-    	console.log('INVALID!',email);
     }
   }
 });

@@ -9,7 +9,7 @@ Template.admin.helpers({
 });
 
 Template.admin.events({
-	'click [data-action="add-user"]': function (e) {
+	'submit .add-user': function (e) {
 		e.preventDefault();
 
 		var emailInput = e.target.email;
@@ -18,9 +18,8 @@ Template.admin.events({
 
 	    if (emailValid) {
 		    Meteor.call('addEmailCollect', email);
-		    // Session.set('email', email);
 	    	emailInput.value = '';
-	    	$('#addItemModal').modal('hide');
+	    	$('#addUserModal').modal('hide');
 	    } else {
 	    	console.log('INVALID!',email);
 	    }
