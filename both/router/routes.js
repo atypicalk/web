@@ -1,33 +1,41 @@
-// Home Route
-Router.route('/', {
-  name: 'landing'
-});
+if (Meteor.isCordova) {
+	// profile test
+	Router.route('/', {
+		name: 'profileMobile',
+	});
 
-// Dashboard route
-Router.route('/dashboard', {
-  name: 'dashboard',
-  waitOn: function() {
-    return this.subscribe('items');
-  },
-  data: {
-    items: Items.find({})
-  },
-  // onBeforeAction: function (pause) {
-    // AccountsTemplates.ensureSignedIn.call(this, pause);
-  // },
-  onAfterAction: function () {
+} else {
 
-  }
-});
+	// Home Route
+	Router.route('/', {
+		name: 'landing'
+	});
+	// Profile Route
+	Router.route('/profile', {
+		name: 'profile'
+	});
 
-Router.route('/admin', {
-  name: 'admin',
-  // data: {
-  //   emails: EmailCollect.find({})
-  // },
-});
+	// Dashboard route
+	Router.route('/dashboard', {
+		name: 'dashboard',
+		// waitOn: function() {
+		//   return this.subscribe('items');
+		// },
+		// data: {
+		//   items: Items.find({})
+		// },
+		// onBeforeAction: function (pause) {
+		// AccountsTemplates.ensureSignedIn.call(this, pause);
+		// },
+		// onAfterAction: function () {
 
-// Profile Route
-Router.route('/profile', {
-  name: 'profile'
-});
+		// }
+	});
+
+	Router.route('/admin', {
+		name: 'admin',
+		// data: {
+		//   emails: EmailCollect.find({})
+		// },
+	});
+}

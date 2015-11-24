@@ -1,0 +1,22 @@
+<!-- cordova photo demo: https://github.com/spencercarli/meteor-cordova-photolibrary -->
+
+<template name="profileMobile">
+  <div class="profile-mobile">
+    <div class="row">
+      <h1>Profile</h1>
+    </div>
+    <div class="row">
+		<button class="btn btn-primary btn-camera">Take Photo</button>
+    </div>
+    <div class="row">
+		<button class="btn btn-primary btn-photolib">Open Library</button>
+    </div>
+    <div class="row">
+	    {{#if img}}
+			<img src="{{img}}"/>
+	    {{else}}
+			<p>No image selected yet.</p>
+	    {{/if}}
+	    </div>
+  </div>
+</template>
