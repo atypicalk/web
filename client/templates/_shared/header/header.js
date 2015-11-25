@@ -1,3 +1,10 @@
+Template.header.helpers({
+	isSolid: function () {
+		var route = Router.current().route.getName();
+		return (route !== 'landing') ? 'solid' : '';
+	}
+})
+
 Template.header.events({
   "click [data-action='logout']": function (e) {
     e.preventDefault();

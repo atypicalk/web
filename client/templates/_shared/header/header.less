@@ -1,6 +1,24 @@
 @import '/client/stylesheets/base.less';
 
 #pp-nav {
+	#login-buttons {
+		position: relative;
+    	padding: 30px;
+	
+		.accounts-dialog {
+			right: 0;
+			left: auto;
+		}
+
+		.login-close-text {
+			float: right;
+		}
+
+		a.login-link-text {
+			color: #FFF;
+		}
+	}
+
 	&.navbar {
 		margin: 0;
 	    position: absolute;
@@ -10,5 +28,10 @@
     	border-radius: 0;
     	// background-color: fade(@brand-primary, 50%);
     	// background-color: @brand-primary;
+	}
+
+	&.solid {
+		background-color: @brand-primary;
+		position: relative;
 	}
 }

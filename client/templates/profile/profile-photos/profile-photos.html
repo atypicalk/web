@@ -1,11 +1,14 @@
 <template name="profilePhotos">
 	<div class="profile-photos">
-		<div class="pet">
-			<img src="{{c.url profile.petPhoto.public_id width='200' height='200' crop='fill' radius='max' border='10px_solid_black'}}" />
+		<div class="pics">
+			<div class="pet">
+				<img src="{{c.url profile.petPhoto.public_id width='200' height='200' crop='fill' radius='max' border='10px_solid_black'}}" />
+			</div>
+			<div class="owner">
+				<img src="{{c.url profile.ownerPhoto.public_id width='100' height='100' crop='fill' radius='max' border='5px_solid_black'}}" />
+			</div>
 		</div>
-		<div class="owner">
-			<img src="{{c.url profile.ownerPhoto.public_id width='100' height='100' crop='fill' radius='max'}}" />
-		</div>
+
 		<button class="btn btn-info btn-file">
 			<input name="file" type="file" class="pet-photo" />Upload Pet Photo
 		</button>

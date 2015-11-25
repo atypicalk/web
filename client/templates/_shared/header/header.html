@@ -1,5 +1,5 @@
 <template name="header">
-	<nav id="pp-nav" class="navbar navbar-default">
+	<nav id="pp-nav" class="navbar navbar-default {{isSolid}}">
 		<div class="container-fluid">
 
 			<!-- Brand and toggle get grouped for better mobile display -->
@@ -17,7 +17,11 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Login</a></li>
+					{{#if currentUser}}
+						<li><a href="/admin">Admin</a></li>
+						<li><a href="/profile">Profile</a></li>
+					{{/if}}
+					<li>{{> loginButtons}}</li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->

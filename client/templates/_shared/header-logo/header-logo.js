@@ -7,8 +7,8 @@ Template.headerLogo.helpers({
 });
 
 Template.headerLogo.events({
-	'click .header-logo': function(e) {
+	// 'click .header-logo': function(e) {
 		// e.preventDefault();
-		Router.go('/dashboard');
-	}
+		// Router.go('/dashboard');
+	// }
 });
