@@ -44,7 +44,21 @@ Schema.UserProfile = new SimpleSchema({
 	isPhantom: {
 		type: Boolean,
 		optional: true
-	}
+	},
+	ownerPhoto: {
+		type: Object,
+		optional: true
+	},
+	'ownerPhoto.public_id': {
+		type: String
+	},
+	petPhoto: {
+		type: Object,
+		optional: true
+	},
+	'petPhoto.public_id': {
+		type: String,
+	},
 });
 
 Schema.User = new SimpleSchema({

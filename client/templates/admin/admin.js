@@ -22,7 +22,8 @@ Template.admin.events({
 			if (password) {
 				Meteor.call('createUser', {
 					email: email,
-					password: password
+					password: password,
+					profile: {}
 				});
 			} else {
 				Meteor.call('createPhantomUser', email);
