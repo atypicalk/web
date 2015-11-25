@@ -1,7 +1,23 @@
 {
-  "twitter" : {
-    "oauth_key" : "<oauth_key>",
-    "oauth_secret" : "<oauth_secret>",
-    "api_key" : "<api_key>"
-  }
+	"public": {
+		"cloudinary": {
+			"cloud_name": "petpal",
+			"folders": {
+				"profile": {
+					"pet": "stage-pet",
+					"owner": "stage-owner"
+				},
+				"gallery": "stage-gallery"
+			}
+		}
+	},
+	"cloudinary": {
+		"api_key": "446399969522435",
+		"api_secret": "o0NA129piT9koKLj8MyVqOn1iMs"
+	},
+	"twitter": {
+		"oauth_key": "<oauth_key>",
+		"oauth_secret": "<oauth_secret>",
+		"api_key": "<api_key>"
+	}
 }
