@@ -2,14 +2,15 @@ var envSettings = Meteor.settings;
 
 // -- Router Config --
 Router.configure({
-	layoutTemplate: 'appLayout',
+  controller: 'AppController',
 	loadingTemplate: 'loading',
-	progressSpinner: false
+	// progressSpinner: false
 });
 
-Router.plugin('loading', {
-	loadingTemplate: 'loading'
-});
+// Router.plugin('loading', {
+// 	loadingTemplate: 'loading'
+// });
+
 Router.plugin('dataNotFound', {
 	dataNotFoundTemplate: 'notFound'
 });

@@ -15,7 +15,7 @@ Template.admin.events({
 		var target = e.target;
 		var email = target.email.value;
 		var password = target.password.value;
-		var emailValid = validateEmail(email);
+		var emailValid = UI.__globalHelpers['validateEmail'](email);
 
 		if (emailValid) {
 

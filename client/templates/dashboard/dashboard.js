@@ -9,10 +9,10 @@ Template.dashboard.events({
     e.preventDefault();
 
     // Insert the form data into the "Items" collection
-    Items.insert({
-      name: $("[name='name']").val(),
-      rating: $("[name='rating']").val()
-    });
+    // Items.insert({
+    //   name: $("[name='name']").val(),
+    //   rating: $("[name='rating']").val()
+    // });
 
     // Hide the bootstrap modal once we submit the form
     $('#addItemModal').modal('hide');

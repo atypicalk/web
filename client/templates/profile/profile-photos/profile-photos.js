@@ -38,7 +38,12 @@ Template.profilePhotos.events({
     		var _id = Meteor.user()._id;
 
     		if (folder === profileFolders.pet) {
-	    		Meteor.users.update({_id: _id},{$set:{'profile.petPhoto.public_id': public_id}});
+    			Meteor.call('updatePetProfilePic', {
+    				pet_id: Meteor.user().profile.pets[0].pet_id,
+    				photo: public_id
+    			});
+
+	    		// Meteor.users.update({_id: _id},{$set:{'profile.petPhoto.public_id': public_id}});
 	    	} else {
 	    		Meteor.users.update({_id: _id},{$set:{'profile.ownerPhoto.public_id': public_id}});
 	    	}

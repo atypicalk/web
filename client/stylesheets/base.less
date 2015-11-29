@@ -3,40 +3,18 @@ Imports
 --------------------------*/
 @import "./lib/bootstrap/bootstrap.import.less";
 @import "./lib/font-awesome/font-awesome.import.less";
-// @import "./lib/bootstrap/mixins.import.less";
-// @import "./lib/bootstrap/variables.import.less";
 
 /* -------------------------
-Mixins
+Custom
 --------------------------*/
-
-
-/* -------------------------
-Variables
---------------------------*/
-
-@brand-primary: #26ACC1;
-
-@navbar-height: 76px;
-@navbar-default-bg: fade(@brand-primary, 50%);
-@navbar-default-link-color: #FFF;
-@navbar-default-link-hover-color: @navbar-default-link-color;
-@navbar-default-link-active-color: @navbar-default-link-color;
-@navbar-default-link-hover-bg: fade(lighten(@brand-primary, 10%), 50%);
+@import './mixins.import.less';
+@import './variables.import.less';
+@import './type.import.less';
+@import './buttons.import.less';
 
 /* -------------------------
 Customized Styles
 --------------------------*/
-.transparent {
-  background-color: transparent !important;
-}
-.no-border {
-  border: none !important;
-}
-.no-shadow {
-  box-shadow: none !important;
-}
-
 #iron-router-progress {
     background-color : @brand-primary;
     box-shadow       : 0 0 5px @brand-primary;

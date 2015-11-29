@@ -1,4 +1,6 @@
-Schema = {};
+if (typeof Schema === 'undefined') {
+    Schema = function Schema() {}
+}
 
 Schema.UserCountry = new SimpleSchema({
 	name: {
@@ -45,11 +47,11 @@ Schema.UserProfile = new SimpleSchema({
 		type: Boolean,
 		optional: true
 	},
-	ownerPhoto: {
+	photo: {
 		type: Object,
 		optional: true
 	},
-	'ownerPhoto.public_id': {
+	'photo.public_id': {
 		type: String
 	},
 	petPhoto: {
@@ -59,6 +61,12 @@ Schema.UserProfile = new SimpleSchema({
 	'petPhoto.public_id': {
 		type: String,
 	},
+	pets: {
+		type: Array,
+	},
+	'pets.$': {
+		type: Schema.Pets
+	}
 });
 
 Schema.User = new SimpleSchema({
@@ -122,24 +130,3 @@ Schema.User = new SimpleSchema({
 });
 
 Meteor.users.attachSchema(Schema.User);
-
-
-var isAdmin = function(uid) {
-	return true;
-}
-
-if (Meteor.isServer) {
-	Meteor.publish('users', function() {
-		if (isAdmin(this.userId)) {
-			return Meteor.users.find();
-		} else {
-			return Meteor.users.find({
-				_id: this.userId
-			});
-		}
-	});
-}
-
-if (Meteor.isClient) {
-	Meteor.subscribe('users');
-}
