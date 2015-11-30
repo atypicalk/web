@@ -33,13 +33,13 @@ Template.profilePhotos.events({
     			alert('error uploading photo');
     			return false;
     		}
-
+    		console.log('user:',Meteor.user());
     		var public_id = res.public_id;
     		var _id = Meteor.user()._id;
 
     		if (folder === profileFolders.pet) {
-    			Meteor.call('updatePetProfilePic', {
-    				pet_id: Meteor.user().profile.pets[0].pet_id,
+    			Meteor.call('Pets.updateProfilePic', {
+    				petId: Meteor.user().profile.pets[0],
     				photo: public_id
     			});
 

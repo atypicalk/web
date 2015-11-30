@@ -1,8 +1,70 @@
 <template name="profile">
 	<div class="template-profile">
 		<div class="page-header">
+			<button class="btn btn-default pull-right btn-add-pet">Add Pet +</button>
 			<h1>Profile</h1>
 		</div>
+
+		{{#each pets}}
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<button class="btn btn-danger pull-right btn-remove-pet">Remove Pet</button>
+					<h3 class="panel-title" style="line-height: 34px;">Pet ID: {{ _id }}</h3>
+				</div>
+				<div class="panel-body">
+					<form class="update-pet" role="form">
+						<ul style="padding: 0; list-style-type: none;">
+							<li>
+								{{#if profile.name}}
+									<span><strong>Name:</strong> {{ profile.name }}</span>
+									<span class="btn btn-link btn-edit-name">[edit]</span>
+								{{else}}
+									<div class="form-group">
+										<!-- <label>Name</label> -->
+										<input type="text" class="form-control" name="name" placeholder="Name">
+									</div>
+								{{/if}}
+							</li>
+							<li>
+								{{#if profile.breed}}
+									<span><strong>Breed:</strong> {{ profile.breed }}</span>
+									<span class="btn btn-link btn-edit-breed">[edit]</span>
+								{{else}}
+									<div class="form-group">
+										<!-- <label>Breed</label> -->
+										<input type="text" class="form-control" name="breed" placeholder="Breed">
+									</div>
+								{{/if}}
+							</li>
+							<li>
+								{{#if profile.age}}
+									<span><strong>Age:</strong> {{ profile.age }}</span>
+									<span class="btn btn-link btn-edit-age">[edit]</span>
+								{{else}}
+									<div class="form-group">
+										<!-- <label>Age</label> -->
+										<input type="text" class="form-control" name="age" placeholder="Age [0-99]">
+									</div>
+								{{/if}}
+							</li>
+							<li>
+								{{#if profile.gender}}
+									<span><strong>Gender:</strong> {{ profile.gender }}</span>
+									<span class="btn btn-link btn-edit-gender">[edit]</span>
+								{{else}}
+									<div class="form-group">
+										<!-- <label>Gender</label> -->
+										<input type="text" class="form-control" name="gender" placeholder="Male or Female">
+									</div>
+								{{/if}}
+							</li>
+						</ul>
+
+						<button type="submit" name="action" class="btn btn-info">Save</button>
+					</form>
+				</div>
+			</div>
+		{{/each}}
 
 		{{> profilePhotos}}
 	</div>

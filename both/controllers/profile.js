@@ -1,9 +1,9 @@
-ProfileController = AppController.extend({
+ProfileController = _AppController.extend({
 	waitOn: function() {
-		// return this.subscribe('items');
+		return this.subscribe('pets');
 	},
 	data: {
-		// items: Items.find({})
+		pets: Pets.find()
 	},
 	onAfterAction: function() {
 		Meta.setTitle('PetPal - Profile');

@@ -1,4 +1,4 @@
-LandingController = AppController.extend({
+LandingController = _AppController.extend({
 	waitOn: function() {
 		// return this.subscribe('items');
 	},

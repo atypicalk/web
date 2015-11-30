@@ -2,16 +2,6 @@ if (typeof Schema === 'undefined') {
     Schema = function Schema() {}
 }
 
-Schema.UserCountry = new SimpleSchema({
-	name: {
-		type: String
-	},
-	code: {
-		type: String,
-		regEx: /^[A-Z]{2}$/
-	}
-});
-
 Schema.UserProfile = new SimpleSchema({
 	firstName: {
 		type: String,
@@ -28,6 +18,7 @@ Schema.UserProfile = new SimpleSchema({
 	},
 	organization: {
 		type: String,
+		// defaultValue: 'hello'
 		optional: true
 	},
 	website: {
@@ -63,9 +54,14 @@ Schema.UserProfile = new SimpleSchema({
 	},
 	pets: {
 		type: Array,
+		defaultValue: []
+		// optional: true
 	},
 	'pets.$': {
-		type: Schema.Pets
+		// type: Object
+		type: String,
+		// defaultValue: {}
+		// optional: true
 	}
 });
 
@@ -99,7 +95,8 @@ Schema.User = new SimpleSchema({
 	},
 	profile: {
 		type: Schema.UserProfile,
-		optional: true
+		defaultValue: {}
+		// optional: true
 	},
 	// Make sure this services field is in your schema if you're using any of the accounts packages
 	services: {

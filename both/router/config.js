@@ -2,7 +2,7 @@ var envSettings = Meteor.settings;
 
 // -- Router Config --
 Router.configure({
-  controller: 'AppController',
+	controller: '_AppController',
 	loadingTemplate: 'loading',
 	// progressSpinner: false
 });
@@ -13,14 +13,6 @@ Router.configure({
 
 Router.plugin('dataNotFound', {
 	dataNotFoundTemplate: 'notFound'
-});
-
-// Accounts Config
-// AccountsTemplates.configureRoute('signIn', {layoutTemplate: 'appLayout'});
-// AccountsTemplates.configureRoute('signUp', {layoutTemplate: 'appLayout'});
-
-Accounts.config({
-	forbidClientAccountCreation: false
 });
 
 if (Meteor.isServer) {

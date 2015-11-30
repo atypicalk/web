@@ -12,18 +12,18 @@ Meteor.publish('users', function() {
 	}
 });
 
-Meteor.publishComposite('users', function() {
-  return {
-    find: function() {
-      return Items.find({});
-    }
-    // ,
-    // children: [
-    //   {
-    //     find: function(item) {
-    //       return [];
-    //     }
-    //   }
-    // ]
-  };
-});
+// Meteor.publishComposite('users', function() {
+// 	return {
+// 		find: function() {
+// 				return Meteor.users.find();
+// 			}
+// 			// ,
+// 			// children: [
+// 			//   {
+// 			//     find: function(item) {
+// 			//       return [];
+// 			//     }
+// 			//   }
+// 			// ]
+// 	};
+// });

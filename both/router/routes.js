@@ -41,7 +41,7 @@ if (Meteor.isCordova) {
 
 }
 
-Router.plugin('ensureSignedIn', {
-  only: ['profile', 'admin']
-});
+// Router.plugin('ensureSignedIn', {
+//   only: ['profile', 'admin']
+// });
 

@@ -12,7 +12,7 @@ Schema.PetProfile = new SimpleSchema({
 		optional: true
 	},
 	age: {
-		type: String,
+		type: Number,
 		optional: true
 	},
 	gender: {
@@ -58,11 +58,12 @@ Schema.PetProfile = new SimpleSchema({
 });
 
 Schema.Pets = new SimpleSchema({
-	user_id: {
+	userId: {
 		type: String,
 	},
 	profile: {
-		type: Schema.PetProfile
+		type: Schema.PetProfile,
+		defaultValue: {}
 	},
 	photos: {
 		type: Array,
@@ -78,7 +79,7 @@ Schema.Pets = new SimpleSchema({
 	'videos.$': {
 		type: Object
 	}
-})
+});
 
 Pets = new Mongo.Collection('pets');
 
@@ -86,17 +87,4 @@ Pets.helpers({
 
 })
 
-Pets.attachSchema(Schema.Pets)
-
-if (Meteor.isServer) {
-	Meteor.publish('pets', function() {
-		return Pets.find();
-		// return Pets.find({
-		// 	_id: this.userId
-		// });
-	});
-}
-
-if (Meteor.isClient) {
-	Meteor.subscribe('pets');
-}
+Pets.attachSchema(Schema.Pets);

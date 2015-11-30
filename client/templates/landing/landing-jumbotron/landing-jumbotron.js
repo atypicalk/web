@@ -22,7 +22,7 @@ Template.landingJumbotron.events({
     var emailValid = validateEmail(email);
 
     if (emailValid) {
-	    Meteor.call('createPhantomUser', email, function (error) {
+	    Meteor.call('Users.createPhantom', email, function (error) {
 	    	if (error) {
 	    		console.log('error!', error);
 	    		return;

@@ -26,7 +26,7 @@ Template.admin.events({
 					profile: {}
 				});
 			} else {
-				Meteor.call('createPhantomUser', email);
+				Meteor.call('Users.createPhantom', email);
 			}
 
 			target.email.value = '';

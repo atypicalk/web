@@ -6,4 +6,4 @@ Template.registerHelper('validateEmail', function(email) {
 	var isValid = eVer.test(email);
 
 	return isValid;
-}
+});

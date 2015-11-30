@@ -1,4 +1,4 @@
-AdminController = AppController.extend({
+AdminController = _AppController.extend({
 	waitOn: function() {
 		// return this.subscribe('items');
 	},
