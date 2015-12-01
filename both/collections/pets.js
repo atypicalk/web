@@ -37,7 +37,7 @@ Schema.PetProfile = new SimpleSchema({
 	},
 	likes: {
 		type: Array,
-		optional: true
+		defaultValue: []
 	},
 	'likes.$': {
 		type: Object
@@ -47,7 +47,7 @@ Schema.PetProfile = new SimpleSchema({
 	},
 	dislikes: {
 		type: Array,
-		optional: true
+		defaultValue: []
 	},
 	'dislikes.$': {
 		type: Object

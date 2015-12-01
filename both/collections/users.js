@@ -52,13 +52,18 @@ Schema.UserProfile = new SimpleSchema({
 	'ownerPhoto.public_id': {
 		type: String
 	},
-	petPhoto: {
-		type: Object,
-		optional: true
-	},
-	'petPhoto.public_id': {
+	// only 1 pet for v1 release
+	pet: {
 		type: String,
-	},
+		optional: true
+	}
+	// pets: {
+	// 	type: Array,
+	// 	defaultValue: []
+	// },
+	// 'pets.$': {
+	// 	type: String,
+	// }
 });
 
 Schema.User = new SimpleSchema({
@@ -123,11 +128,6 @@ Schema.User = new SimpleSchema({
 
 Meteor.users.attachSchema(Schema.User);
 
-
-var isAdmin = function(uid) {
-	return true;
-}
-
-if (Meteor.isClient) {
-	Meteor.subscribe('users');
-}
+Meteor.users.before.insert(function (id, doc) {
+	doc.profile.pet = Pets.insert({userId: doc._id});
+})

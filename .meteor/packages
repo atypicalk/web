@@ -62,7 +62,7 @@ alethes:pages
 luisalmeida:unveil
 
 # comment lib
-# 
+#
 arkham:comments-ui
 
 #####################
@@ -70,3 +70,4 @@ arkham:comments-ui
 dburles:factory
 anti:fake
 practicalmeteor:faker
+reactive-var

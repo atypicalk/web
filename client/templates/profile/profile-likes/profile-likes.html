@@ -1,0 +1,60 @@
+<template name="profileLikes">
+	<div class="profile-likes col-sm-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				{{#unless editMode}}<button class="btn btn-danger pull-right btn-edit-likes">Edit</button>{{/unless}}
+				<h3 class="panel-title" style="line-height: 34px;">Likes</h3>
+			</div>
+			<div class="panel-body">
+				{{#if hasLikes}}
+					{{#if editMode }}
+						<form class="add-like" role="form">
+							<ul style="padding: 0; list-style-type: none;">
+							{{#each pet.profile.likes}}
+								<li class="form-group">
+									<div class="input-group">
+										<input type="text" class="form-control" name="thing" placeholder="What does your pet like?" value="{{thing}}">
+										<span class="input-group-btn btn-delete">
+									        <button class="btn btn-danger" type="button">x</button>
+									    </span>
+									</div>
+								</li>
+							{{/each}}
+							</ul>
+							<div class="form-group">
+								<input type="text" class="form-control" name="thing" placeholder="What else does your pet like?">
+							</div>
+
+							<div class="pull-right">
+								<button class="btn btn-link btn-cancel-likes">Cancel</button>
+								<button class="btn btn-info btn-save-likes">Save</button>
+							</div>
+							<button class="btn btn-link btn-add-like">Add +</button>
+						</form>
+
+					{{else}}
+						<ul style="padding: 0; list-style-type: none;">
+							{{#each pet.profile.likes}}
+								<li>
+									<span>{{thing}}</span>
+								</li>
+							{{/each}}
+						</ul>
+					{{/if}}
+				{{else}}
+					{{#if addLike}}
+						<!-- {{> quickForm collection="Pets" scope="profile.likes" id="insertBookForm" type="update-pushArray"}} -->
+						<form class="add-like" role="form">
+							<div class="form-group">
+								<input type="text" class="form-control" name="thing" placeholder="What does your pet like?">
+							</div>
+						</form>
+					{{else}}
+						<button class="btn btn-info btn-add-like">Add Like +</button>
+					{{/if}}
+				{{/if}}
+
+			</div>
+		</div>
+	</div>
+</template>

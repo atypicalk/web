@@ -1,8 +1,8 @@
-Template.profile.onRendered(function() {
+Template.settings.onRendered(function() {
 
 });
 
-Template.profile.events({
+Template.settings.events({
 	'click .btn-add-pet': function(e) {
 		Meteor.call('Users.addPet', function (error) {
 			if (error) {
@@ -11,6 +11,16 @@ Template.profile.events({
 				return;
 			}
 			console.log('Users.addPet >> SUCCESS!');
+		});
+	},
+	'click .btn-remove-pet': function(e) {
+		Meteor.call('Users.removePet', this._id, function (error) {
+			if (error) {
+				alert(error);
+				console.log(error);
+				return;
+			}
+			console.log('Users.removePet >> SUCCESS!');
 		});
 	},
 	'submit .update-pet': function(e) {
@@ -35,11 +45,8 @@ Template.profile.events({
 	}
 });
 
-Template.profile.helpers({
-	user: function () {
-		return Meteor.users.findOne();
-	},
-	pet: function () {
-		return Pet.findOne();
-	},
+Template.settings.helpers({
+	pets: function () {
+		return Pets.find();
+	}
 })
