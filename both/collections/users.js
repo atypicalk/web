@@ -45,24 +45,18 @@ Schema.UserProfile = new SimpleSchema({
 	'photo.public_id': {
 		type: String
 	},
-	petPhoto: {
-		type: Object,
+	// only 1 pet for v1 release
+	pet: {
+		type: String,
 		optional: true
-	},
-	'petPhoto.public_id': {
-		type: String,
-	},
-	pets: {
-		type: Array,
-		defaultValue: []
-		// optional: true
-	},
-	'pets.$': {
-		// type: Object
-		type: String,
-		// defaultValue: {}
-		// optional: true
 	}
+	// pets: {
+	// 	type: Array,
+	// 	defaultValue: []
+	// },
+	// 'pets.$': {
+	// 	type: String,
+	// }
 });
 
 Schema.User = new SimpleSchema({
@@ -127,3 +121,7 @@ Schema.User = new SimpleSchema({
 });
 
 Meteor.users.attachSchema(Schema.User);
+
+Meteor.users.before.insert(function (id, doc) {
+	doc.profile.pet = Pets.insert({userId: doc._id});
+})

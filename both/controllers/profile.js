@@ -1,9 +1,11 @@
 ProfileController = _AppController.extend({
 	waitOn: function() {
-		return this.subscribe('pets');
+		return this.subscribe('userProfile');
+		// return this.subscribe('pets');
 	},
 	data: {
-		pets: Pets.find()
+		// pets: Pets.find()
+		// user: Meteor.user.find();
 	},
 	onAfterAction: function() {
 		Meta.setTitle('PetPal - Profile');
