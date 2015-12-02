@@ -4,10 +4,11 @@
 			"cloud_name": "petpal",
 			"folders": {
 				"profile": {
-					"pet": "prod-pet",
-					"owner": "prod-owner"
+					"pet": "prod/profile/pet/",
+					"owner": "prod/profile/user/"
 				},
-				"gallery": "prod-gallery"
+				"gallery": "prod/gallery/",
+				"landing": "prod/landing/"
 			}
 		}
 	},
