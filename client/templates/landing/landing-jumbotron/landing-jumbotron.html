@@ -14,24 +14,40 @@
 		<!-- TEXT AND CTA -->
 		<div class="center-abs" style="color: #FFF; padding: 0 20px;">
 			<h2 style="text-align: center;">Connecting people through their pets</h2>
-				{{#if email}}
-				<div class="thanks">
-					<h3 style="color:#FFF">Thank you <span style="color: cyan">{{email}}</span>. Brace yourself for SPAM!</h3>
+			{{#if currentUser}}
+			<p>Welcome back!</p>
+			{{else}}
+			<div class="text-center">
+				<button data-toggle="collapse" id="sign-up-collapse-toggle-button" class="btn btn-primary" data-target="#sign-up-collapse">SIGN UP</button>
+				<div id="sign-up-collapse" class="collapse">
+					{{> register}}
 				</div>
-				{{else}}
-				<form class="form-email" style="max-width: 340px; margin: 0 auto;">
-					<div class="input-group">
-						<input class="form-control" placeholder="Find your pet friends by name or email" id="first_name" name="email" type="email" data-error="fjoifj"/>
-						<div class="help-block with-errors"></div>
-						<span class="input-group-btn">
-							<button class="btn btn-primary" type="submit" name="action">
-								<span>Fetch!</span>
-								<i class="fa fa-paw"></i>
-							</button>
-						</span>
-					</div>
-				</form>
-				{{/if}}
+				<button data-toggle="collapse" id="sign-in-collapse-toggle-button"  class="btn btn-default" data-target="#log-in-collapse">LOG IN</button>
+				<div id="log-in-collapse" class="collapse">
+					{{> login}}
+				</div>
+			</div>
+			{{/if}}
+			<h2 style="text-align: center;">We Are Launching Early 2016!</h2>
+			<!--	{{#if email}}
+			<div class="thanks">
+			<h3 style="color:#FFF">Thank you <span style="color: cyan">{{email}}</span>. Brace yourself for SPAM!</h3>
 		</div>
-	</div>
+		{{else}}
+		<form class="form-email" style="max-width: 340px; margin: 0 auto;">
+		<div class="input-group">
+		<input class="form-control" placeholder="Find your pet friends by name or email" id="first_name" name="email" type="email" data-error="fjoifj"/>
+		<div class="help-block with-errors"></div>
+		<span class="input-group-btn">
+		<button class="btn btn-primary" type="submit" name="action">
+		<span>Fetch!</span>
+		<i class="fa fa-paw"></i>
+	</button>
+</span>
+</div>
+</form>
+{{/if}}
+-->
+</div>
+</div>
 </template>

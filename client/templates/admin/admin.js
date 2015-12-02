@@ -1,3 +1,4 @@
+/*
 Template.admin.onRendered(function() {
 
 });
@@ -36,3 +37,4 @@ Template.admin.events({
 		}
 	}
 });
+*/

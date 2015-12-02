@@ -4,7 +4,8 @@ if (Meteor.isCordova) {
 		name: 'profileMobile',
 	});
 
-} else {
+}
+else {
 
 	// Home Route
 	Router.route('/', {
@@ -17,8 +18,9 @@ if (Meteor.isCordova) {
 		controller: 'ProfileController'
 	});
 
-	Router.route('/admin', {
+	/*Router.route('/admin', {
 		name: 'admin',
+
 		controller: 'AdminController'
 	});
 
@@ -39,9 +41,14 @@ if (Meteor.isCordova) {
 	// 	}
 	// });
 
+
+		// data: {
+		//   emails: EmailCollect.find({})
+		// },
+	});*/
 }
-
-// Router.plugin('ensureSignedIn', {
-//   only: ['profile', 'admin']
-// });
-
+/*
+Router.plugin('ensureSignedIn', {
+ only: ['profile']
+ });
+*/

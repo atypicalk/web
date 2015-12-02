@@ -18,6 +18,19 @@ Template.landingJumbotron.helpers({
 });
 
 Template.landingJumbotron.events({
+	'button #sign-in-collapse-toggle-button' : function(e, t){
+		e.preventDefault();
+		$('#register-email').val('');
+		$('#register-password').val('');
+		$('sign-up-collapse-toggle-button').hide();
+	},
+	'button #sign-up-collapse-toggle-button' : function(e, t){
+		e.preventDefault();
+		$('#login-email').val('');
+		$('#login-password').val('');
+		$('sign-in-collapse-toggle-button').hide();
+	},
+
   'submit .form-email': function (e) {
     e.preventDefault();
 
