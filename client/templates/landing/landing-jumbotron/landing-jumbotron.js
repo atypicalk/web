@@ -19,7 +19,8 @@ Template.landingJumbotron.events({
 
     var emailInput = e.target.email;
     var email = emailInput.value;
-    var emailValid = validateEmail(email);
+    console.log(UI);
+	var emailValid = UI._globalHelpers['validateEmail'](email);
 
     if (emailValid) {
 	    Meteor.call('Users.createPhantom', email, function (error) {

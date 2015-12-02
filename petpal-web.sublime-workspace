@@ -255,10 +255,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
-		"last_filter": "inst",
+		"height": 227.0,
+		"last_filter": "insta",
 		"selected_items":
 		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
 			[
 				"inst",
 				"Package Control: Install Package"
@@ -288,10 +292,6 @@
 				"HTMLBeautify"
 			],
 			[
-				"insta",
-				"Package Control: Install Package"
-			],
-			[
 				"sass",
 				"Set Syntax: Sass"
 			]
@@ -318,48 +318,65 @@
 	"expanded_folders":
 	[
 		"/Users/Omid/Development/PetPal/src",
+		"/Users/Omid/Development/PetPal/src/.meteor",
 		"/Users/Omid/Development/PetPal/src/both",
+		"/Users/Omid/Development/PetPal/src/both/accounts",
 		"/Users/Omid/Development/PetPal/src/both/collections",
+		"/Users/Omid/Development/PetPal/src/both/controllers",
 		"/Users/Omid/Development/PetPal/src/both/router",
 		"/Users/Omid/Development/PetPal/src/client",
-		"/Users/Omid/Development/PetPal/src/client/stylesheets/lib",
-		"/Users/Omid/Development/PetPal/src/client/stylesheets/lib/bootstrap",
+		"/Users/Omid/Development/PetPal/src/client/stylesheets",
 		"/Users/Omid/Development/PetPal/src/client/templates",
 		"/Users/Omid/Development/PetPal/src/client/templates/admin",
 		"/Users/Omid/Development/PetPal/src/client/templates/profile",
+		"/Users/Omid/Development/PetPal/src/client/templates/profile/profile-likes",
+		"/Users/Omid/Development/PetPal/src/client/templates/profile/profile-photos",
+		"/Users/Omid/Development/PetPal/src/client/templates/settings",
 		"/Users/Omid/Development/PetPal/src/icons",
-		"/Users/Omid/Development/PetPal/src/public/images",
 		"/Users/Omid/Development/PetPal/src/server",
+		"/Users/Omid/Development/PetPal/src/server/methods",
 		"/Users/Omid/Development/PetPal/src/server/publications",
 		"/Users/Omid/Development/PetPal/src/server/templates"
 	],
 	"file_history":
 	[
+		"/Users/Omid/Development/PetPal/src/package.json",
+		"/Users/Omid/Development/PetPal/src/client/templates/landing/landing.js",
+		"/Users/Omid/Development/PetPal/src/both/controllers/landing.js",
+		"/Users/Omid/Development/PetPal/src/petpal-web.sublime-project",
+		"/Users/Omid/Development/PetPal/src/server/publications/users.js",
+		"/Users/Omid/Development/PetPal/src/server/publications/pets.js",
+		"/Users/Omid/Development/PetPal/src/both/collections/pets.js",
+		"/Users/Omid/Development/PetPal/src/server/methods/pets.js",
+		"/Users/Omid/Development/PetPal/src/server/methods/users.js",
+		"/Users/Omid/Development/PetPal/src/client/templates/settings/settings.html",
+		"/Users/Omid/Development/PetPal/src/client/templates/settings/settings.js",
+		"/Users/Omid/Development/PetPal/src/.meteor/versions",
+		"/Users/Omid/Development/PetPal/src/client/templates/profile/profile-photos/profile-photos.html",
+		"/Users/Omid/Development/PetPal/src/client/templates/profile/profile-photos/profile-photos.js",
+		"/Users/Omid/Development/PetPal/src/client/templates/profile/profile.js",
+		"/Users/Omid/Development/PetPal/src/client/stylesheets/buttons.import.less",
+		"/Users/Omid/Development/PetPal/src/client/stylesheets/base.less",
+		"/Users/Omid/Development/PetPal/src/README.md",
+		"/Users/Omid/Development/PetPal/src/both/collections/users.js",
+		"/Users/Omid/Development/PetPal/src/both/controllers/profile.js",
+		"/Users/Omid/Development/PetPal/src/client/templates/profile/profile.html",
+		"/Users/Omid/Development/PetPal/src/client/templates/profile/profile-likes/profile-likes.html",
+		"/Users/Omid/Development/PetPal/src/client/templates/profile/profile-likes/profile-likes.less",
+		"/Users/Omid/Development/PetPal/src/client/templates/profile/profile-likes/profile-likes.js",
+		"/Users/Omid/Development/PetPal/src/client/templates/landing/landing-jumbotron/landing-jumbotron.js",
+		"/Users/Omid/Development/PetPal/src/client/templates/admin/admin.js",
 		"/Users/Omid/Development/PetPal/src/.meteor/packages",
 		"/Users/Omid/Development/PetPal/src/both/accounts/config.js",
-		"/Users/Omid/Development/PetPal/src/both/collections/pets.js",
-		"/Users/Omid/Development/PetPal/src/both/collections/users.js",
-		"/Users/Omid/Development/PetPal/src/server/methods/users.js",
 		"/Users/Omid/Development/PetPal/src/server/seeds/users.js",
 		"/Users/Omid/Development/PetPal/src/both/controllers/_app.js",
-		"/Users/Omid/Development/PetPal/src/petpal-web.sublime-project",
 		"/Users/Omid/Development/PetPal/src/both/controllers/admin.js",
 		"/Users/Omid/Development/PetPal/src/client/templates/admin/admin.html",
 		"/Users/Omid/Development/PetPal/src/both/router/routes.js",
-		"/Users/Omid/Development/PetPal/src/both/controllers/landing.js",
-		"/Users/Omid/Development/PetPal/src/both/controllers/profile.js",
-		"/Users/Omid/Development/PetPal/src/client/templates/profile/profile.js",
-		"/Users/Omid/Development/PetPal/src/client/templates/profile/profile-photos/profile-photos.js",
-		"/Users/Omid/Development/PetPal/src/server/methods/pets.js",
 		"/Users/Omid/Development/PetPal/src/client/helpers/validateEmail.js",
 		"/Users/Omid/Development/PetPal/src/client/templates/_shared/_layout.html",
 		"/Users/Omid/Development/PetPal/src/both/router/config.js",
 		"/Users/Omid/Development/PetPal/src/client/templates/landing/landing-jumbotron/landing-jumbotron.html",
-		"/Users/Omid/Development/PetPal/src/client/templates/landing/landing-jumbotron/landing-jumbotron.js",
-		"/Users/Omid/Development/PetPal/src/client/templates/admin/admin.js",
-		"/Users/Omid/Development/PetPal/src/server/publications/users.js",
-		"/Users/Omid/Development/PetPal/src/server/publications/pets.js",
-		"/Users/Omid/Development/PetPal/src/client/templates/profile/profile.html",
 		"/Users/Omid/Development/PetPal/src/server/methods/createPhantomUser.js",
 		"/Users/Omid/Development/PetPal/src/private/.gitkeep",
 		"/Users/Omid/Development/PetPal/src/server/email/config.js",
@@ -367,15 +384,12 @@
 		"/Users/Omid/Development/PetPal/src/client/templates/profile/profile-mobile.js",
 		"/Users/Omid/Development/PetPal/src/client/stylesheets/mixins.import.less",
 		"/Users/Omid/Development/PetPal/src/client/templates/_shared/footer/footer.less",
-		"/Users/Omid/Development/PetPal/src/client/stylesheets/base.less",
-		"/Users/Omid/Development/PetPal/src/.meteor/versions",
 		"/Users/Omid/Development/PetPal/src/client/stylesheets/lib/bootstrap/variables.import.less",
 		"/Users/Omid/Development/PetPal/src/client/stylesheets/lib/bootstrap/navbar.import.less",
 		"/Users/Omid/Development/PetPal/src/client/stylesheets/lib/bootstrap/navs.import.less",
 		"/Users/Omid/Development/PetPal/src/client/stylesheets/lib/bootstrap/bootstrap.import.less",
 		"/Users/Omid/Development/PetPal/src/client/templates/_shared/header/header.less",
 		"/Users/Omid/Development/PetPal/src/both/methods/updatePetProfile.js",
-		"/Users/Omid/Development/PetPal/src/client/templates/profile/profile-photos/profile-photos.html",
 		"/Users/Omid/Development/PetPal/src/client/templates/_shared/header-logo/header-logo.less",
 		"/Users/Omid/Development/PetPal/src/client/templates/_shared/header/header.js",
 		"/Users/Omid/Development/PetPal/src/client/templates/_shared/header/header.html",
@@ -393,7 +407,6 @@
 		"/Users/Omid/Development/PetPal/src/both/controllers/app.js",
 		"/Users/Omid/Development/PetPal/src/client/templates/landing/landing.html",
 		"/Users/Omid/Development/PetPal/src/client/templates/_shared/header-logo/header-logo.html",
-		"/Users/Omid/Development/PetPal/src/client/stylesheets/buttons.import.less",
 		"/Users/Omid/Development/PetPal/src/client/methods/validateEmail.js",
 		"/Users/Omid/Development/PetPal/src/both/router/meta.js",
 		"/Users/Omid/Development/PetPal/src/server/seeds/users",
@@ -409,7 +422,6 @@
 		"/Users/Omid/Development/PetPal/src/client/templates/landing/landing-devices/landing-devices.html",
 		"/Users/Omid/Development/PetPal/src/client/templates/landing/landing-devices/landing-devices.less",
 		"/Users/Omid/Development/PetPal/src/client/templates/landing/landing-devices/landing-devices.js",
-		"/Users/Omid/Development/PetPal/src/client/templates/landing/landing.js",
 		"/Users/Omid/Development/PetPal/src/client/templates/landing/landing-footer/landing-footer.html",
 		"/Users/Omid/Development/PetPal/src/client/templates/_shared/svg/svg.html",
 		"/Users/Omid/Development/PetPal/src/public/svg/svg.html",
@@ -433,7 +445,6 @@
 		"/Users/Omid/Development/PetPal/src/client/templates/_shared/footer.html",
 		"/Users/Omid/Development/PetPal/src/client/templates/_shared/loading.html",
 		"/Users/Omid/Development/PetPal/src/both/collections/items.js",
-		"/Users/Omid/Development/PetPal/src/package.json",
 		"/Users/Omid/Development/PetPal/src/client/templates/landing/headerCta/headerCta.js",
 		"/Users/Omid/Development/PetPal/src/client/templates/_shared/footer/footer.js",
 		"/Users/Omid/Development/PetPal/src/client/templates/_shared/footer.less",
@@ -456,13 +467,7 @@
 		"/Users/Omid/Development/pakible/src/app/client/app/client.js",
 		"/Users/Omid/Development/pakible/src/app/client/app/views/landing/landing.html",
 		"/Users/Omid/Development/pakible/src/app/client/app/views/checkout/directives/review-order/review-order.directive.js",
-		"/Users/Omid/Development/pakible/src/app/common/services/BoxStyles/BoxStyles.service.js",
-		"/Users/Omid/Development/pakible/src/app/client/app/views/landing/directives/lineup-box-preview/lineup-box-preview.html",
-		"/Users/Omid/Development/pakible/src/app/common/services/CustomProject/CustomProject.service.js",
-		"/Users/Omid/Development/pakible/src/app/common/services/User/User.service.js",
-		"/Users/Omid/Development/pakible/src/app/client/app/views/checkout/checkout.controller.js",
-		"/Users/Omid/Development/pakible/src/app/client/app/partials/login/login.controller.js",
-		"/Users/Omid/Development/pakible/src/app/client/app/partials/login/login.html"
+		"/Users/Omid/Development/pakible/src/app/common/services/BoxStyles/BoxStyles.service.js"
 	],
 	"find":
 	{
@@ -582,6 +587,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"validateEmail",
+			"$push",
+			"else",
+			"ad",
+			"addOnePet",
+			"collection",
+			"collec",
+			"profile",
+			"pets",
+			"schema",
+			"meteor add aldeed:simple-schema",
 			"input cla",
 			"addUserPet",
 			"updatepetpro",
@@ -698,18 +714,7 @@
 			"home",
 			"bootstrap",
 			"material",
-			"dash",
-			"emails",
-			"dashboard",
-			"userac",
-			"useracco",
-			"AccountsTemplates.conf",
-			"fullPageAtForm",
-			"ensureSignedIn",
-			"autopublish",
-			"EmailCollect",
-			"email-input",
-			"h3"
+			"dash"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -788,11 +793,87 @@
 		[
 			[
 				"",
-				"client/templates/profile/profile.html"
+				"client/templates/admin/admin.js"
+			],
+			[
+				"base",
+				"client/stylesheets/base.less"
+			],
+			[
+				"methpet",
+				"server/methods/pets.js"
+			],
+			[
+				"pa",
+				".meteor/packages"
+			],
+			[
+				"settingsht",
+				"client/templates/settings/settings.html"
 			],
 			[
 				"profilpho",
 				"client/templates/profile/profile-photos/profile-photos.js"
+			],
+			[
+				"profileht",
+				"client/templates/profile/profile.html"
+			],
+			[
+				"profile",
+				"client/templates/profile/profile.js"
+			],
+			[
+				"ver",
+				".meteor/versions"
+			],
+			[
+				"metho",
+				"server/methods/users.js"
+			],
+			[
+				"coluser",
+				"both/collections/users.js"
+			],
+			[
+				"profi",
+				"client/templates/profile/profile.html"
+			],
+			[
+				"prof",
+				"client/templates/profile/profile.html"
+			],
+			[
+				"methous",
+				"server/methods/users.js"
+			],
+			[
+				"pets",
+				"server/publications/pets.js"
+			],
+			[
+				"user.js",
+				"both/collections/users.js"
+			],
+			[
+				"packa",
+				"package.json"
+			],
+			[
+				"landingjs",
+				"client/templates/landing/landing.js"
+			],
+			[
+				"land",
+				"both/controllers/landing.js"
+			],
+			[
+				"user.",
+				"both/collections/users.js"
+			],
+			[
+				"red",
+				"README.md"
 			],
 			[
 				"pet.",
@@ -813,10 +894,6 @@
 			[
 				"admin",
 				"client/templates/admin/admin.html"
-			],
-			[
-				"user.js",
-				"both/collections/users.js"
 			],
 			[
 				"method",
@@ -883,10 +960,6 @@
 				"settings-dev.json"
 			],
 			[
-				"profi",
-				"client/templates/profile/profile.html"
-			],
-			[
 				"rout",
 				"both/router/routes.js"
 			],
@@ -931,14 +1004,6 @@
 				"client/stylesheets/lib/bootstrap/bootstrap.import.less"
 			],
 			[
-				"ver",
-				".meteor/versions"
-			],
-			[
-				"base",
-				"client/stylesheets/base.less"
-			],
-			[
 				"landing-jum",
 				"client/templates/landing/landing-jumbotron/landing-jumbotron.js"
 			],
@@ -951,10 +1016,6 @@
 				"client/templates/landing/landing-jumbotron/landing-jumbotron.html"
 			],
 			[
-				"land",
-				"client/templates/landing/landing.html"
-			],
-			[
 				"confi",
 				"mobile-config.js"
 			],
@@ -965,10 +1026,6 @@
 			[
 				"landingju",
 				"client/templates/landing/landing-jumbotron/landing-jumbotron.html"
-			],
-			[
-				"pa",
-				".meteor/packages"
 			],
 			[
 				".less",
@@ -1245,58 +1302,6 @@
 			[
 				"userjs",
 				"src/app/client/app/views/user/user.js"
-			],
-			[
-				"client.bl",
-				"src/app/client/client.blade.php"
-			],
-			[
-				"svgshopify",
-				"src/app/shopify/app/partials/svg/shopify.html"
-			],
-			[
-				"shopifycui",
-				"src/app/shopify/app/views/main/directives/cui-static-logo/cui-static-logo.html"
-			],
-			[
-				"cuistati",
-				"src/app/client/app/views/customizer-static/directives/cui-static-logo/cui-static-logo.html"
-			],
-			[
-				"customizerstati",
-				"src/app/client/app/views/customizer-static/customizer-static.html"
-			],
-			[
-				"shopifycu",
-				"src/app/shopify/app/views/checkout/directives/shopify-creation-summary/shopify-creation-summary.html"
-			],
-			[
-				"countown",
-				"src/app/common/directives/countdown-timer/countdown-timer.directive.js"
-			],
-			[
-				"pricing-mod",
-				"src/app/client/app/views/pricing-modal/pricing-modal.html"
-			],
-			[
-				"countdow",
-				"src/app/common/directives/countdown-timer/countdown-timer.html"
-			],
-			[
-				"orderwriter",
-				"src/app/library/Csv/OrderWriter.php"
-			],
-			[
-				"usercontroller.php",
-				"src/app/controllers/UserController.php"
-			],
-			[
-				"userse",
-				"src/app/common/services/User/User.service.js"
-			],
-			[
-				"order.cont",
-				"src/app/client/app/views/order/order.controller.js"
 			]
 		],
 		"width": 0.0
