@@ -8,14 +8,14 @@
 			<div class="panel-body">
 				{{#if hasLikes}}
 					{{#if editMode }}
-						<form class="add-like" role="form">
+						<form class="save-likes" role="form">
 							<ul style="padding: 0; list-style-type: none;">
-							{{#each pet.profile.likes}}
+							{{#each staticLikes}}
 								<li class="form-group">
 									<div class="input-group">
 										<input type="text" class="form-control" name="thing" placeholder="What does your pet like?" value="{{thing}}">
-										<span class="input-group-btn btn-delete">
-									        <button class="btn btn-danger" type="button">x</button>
+										<span class="input-group-btn">
+									        <button class="btn btn-danger btn-delete" data-value="{{thing}}" type="button">x</button>
 									    </span>
 									</div>
 								</li>
