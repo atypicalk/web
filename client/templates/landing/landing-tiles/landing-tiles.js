@@ -10,7 +10,7 @@ Template.landingTiles.helpers({
 			{public_id: imgFolder+'square2.jpg'},
 			{public_id: imgFolder+'square3.jpg'},
 			{public_id: imgFolder+'square4.jpg'},
-			{public_id: imgFolder+'square5.jpg'},
+			{public_id: imgFolder+'square5.gif'},
 			{public_id: imgFolder+'square6.jpg'},
 		]
 	}
