@@ -1,4 +1,5 @@
 @import "./lib/bootstrap/mixins.import.less";
+@import "mixins.flexbox.import.less";
 
 .blur(@amount) {
 	-webkit-filter: blur(@amount);
@@ -8,8 +9,6 @@
 	filter: blur(@amount);
 }
 
-@import "mixins.flexbox.import.less";
-
 .border-radius (@radius: 5px) {
   -webkit-border-radius: @radius;
   -moz-border-radius:    @radius;
@@ -18,4 +17,11 @@
   -moz-background-clip:    padding;
   -webkit-background-clip: padding-box;
   background-clip:         padding-box;
+}
+
+.truncate-string-ellipsis (@width: 100px) {
+  width: @width;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

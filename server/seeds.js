@@ -4,7 +4,7 @@ Meteor.startup(function() {
   var newAccounts = [];
   if (Meteor.users.find().count() === 0) {
      _(10).times(function(n) {
-      newAccount = Accounts.createUser({
+      var newAccount = Accounts.createUser({
         username: faker.name.findName(),
         email: faker.internet.email(),
         password: 'password'
@@ -21,20 +21,23 @@ Meteor.startup(function() {
   });
   if (Places.find({}).count() === 0) {
     _(10).times(function(n) {
-      newPlaces.push(Factory.create('place')['_id']);
+      var newPlace = Factory.create('place');
+      newPlaces.push(newPlace);
     });
   }
-  console.log(newPlaces);
   
   // Create seed data for posts
+  var newPosts = [];
   Factory.define('post', Posts, {
+    createdAt: function() { return new Date(); },
     content: function() { return Fake.paragraph(); },
-    placeId: function() { return Fake.fromArray(newPlaces); },
+    placeId: function() { return Fake.fromArray(newPlaces)['_id']; },
     userId: function() { return Fake.fromArray(newAccounts); }
   });
   if (Posts.find().count() === 0) {
-    _(10).times(function(n) {
-      Factory.create('post');
+    _(100).times(function(n) {
+      var newPost = Factory.create('post');
+      newPosts.push(newPost)
     });
   }
 });

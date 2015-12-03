@@ -7,6 +7,12 @@
 
 .template-newsfeed {
   
+  hr.item-vertical-divider {
+    margin: 0 0.5rem;
+    display: block;
+    border-width: 1px;
+  }
+
   .item-container {
     max-width: 600px;
     background-color:orange;
@@ -69,11 +75,12 @@
         }
 
         .place {
-
+          text-align:right;
+          .truncate-string-ellipsis(250px);
         }
 
         .date {
-
+          color:#888;
         }
       }
     }
@@ -108,18 +115,6 @@
           }
         }
       }
-    }
-  }
-
-  .avatar {
-    border-radius: 10em;
-    display: inline-block;
-    overflow: hidden;
-    vertical-align: middle;
-
-    .image-avatar {
-      height: auto;
-      width: 100%;
     }
   }
 }

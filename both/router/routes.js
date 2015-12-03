@@ -11,17 +11,36 @@ if (Meteor.isCordova) {
 		name: 'landing',
 		controller: 'LandingController'
 	});
+	
 	// Profile Route
 	Router.route('/profile', {
 		name: 'profile',
 		controller: 'ProfileController'
 	});
+	
+	// User Route
+	Router.route('/user/:_id', {
+		name: 'userPage',
+		data: function() {
+      var userId = this.params._id;
+      return Meteor.users.findOne({ _id: userId });
+    }
+	});
 
 	// News Feed route
 	Router.route('/newsfeed', {
-    name: 'newsfeed'
+    name: 'newsfeed',
+    onBeforeAction: function(){
+      var currentUser = Meteor.userId();
+      if(currentUser) {
+        this.next();
+      } else {
+        this.render("login");
+      }
+    }
 	});
 
+  // Admin
 	Router.route('/admin', {
 		name: 'admin',
 		controller: 'AdminController'

@@ -29,7 +29,6 @@ PostsSchema = new SimpleSchema({
   },
   updatedAt: {
     type: Date,
-    label: "Date Coffee Updated in System",
     autoValue: function() {
       if (this.isUpdate) {
         return new Date;

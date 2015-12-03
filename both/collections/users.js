@@ -128,18 +128,6 @@ var isAdmin = function(uid) {
 	return true;
 }
 
-if (Meteor.isServer) {
-	Meteor.publish('users', function() {
-		if (isAdmin(this.userId)) {
-			return Meteor.users.find();
-		} else {
-			return Meteor.users.find({
-				_id: this.userId
-			});
-		}
-	});
-}
-
 if (Meteor.isClient) {
 	Meteor.subscribe('users');
 }

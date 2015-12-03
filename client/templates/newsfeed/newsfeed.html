@@ -7,7 +7,7 @@
     <form id="post-form" action="action">
       <div>
         <input name="file" type="file" class="pet-photo" />
-        <input type="password" id="login-password" />
+        <input name="post-content" id="post-content" />
         <input type="submit" id="post-button" value="Post" />
      </div>
    </form> 
@@ -18,7 +18,8 @@
 
     {{#if moreResults}}
       <div id="showMoreResults" style="margin-left: 25px;">
-        <span class="loading"></span>
+        <!-- <span class="loading"></span> -->
+        <div class="loading">&nbsp;</div>
       </div>
     {{/if}}
 
