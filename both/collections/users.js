@@ -1,6 +1,14 @@
-if (typeof Schema === 'undefined') {
-    Schema = function Schema() {}
-}
+Schema = {};
+
+Schema.UserCountry = new SimpleSchema({
+	name: {
+		type: String
+	},
+	code: {
+		type: String,
+		regEx: /^[A-Z]{2}$/
+	}
+});
 
 Schema.UserProfile = new SimpleSchema({
 	firstName: {
@@ -18,7 +26,6 @@ Schema.UserProfile = new SimpleSchema({
 	},
 	organization: {
 		type: String,
-		// defaultValue: 'hello'
 		optional: true
 	},
 	website: {
@@ -38,11 +45,11 @@ Schema.UserProfile = new SimpleSchema({
 		type: Boolean,
 		optional: true
 	},
-	photo: {
+	ownerPhoto: {
 		type: Object,
 		optional: true
 	},
-	'photo.public_id': {
+	'ownerPhoto.public_id': {
 		type: String
 	},
 	petPhoto: {
@@ -52,17 +59,6 @@ Schema.UserProfile = new SimpleSchema({
 	'petPhoto.public_id': {
 		type: String,
 	},
-	pets: {
-		type: Array,
-		defaultValue: []
-		// optional: true
-	},
-	'pets.$': {
-		// type: Object
-		type: String,
-		// defaultValue: {}
-		// optional: true
-	}
 });
 
 Schema.User = new SimpleSchema({
@@ -95,8 +91,7 @@ Schema.User = new SimpleSchema({
 	},
 	profile: {
 		type: Schema.UserProfile,
-		defaultValue: {}
-		// optional: true
+		optional: true
 	},
 	// Make sure this services field is in your schema if you're using any of the accounts packages
 	services: {
@@ -127,3 +122,24 @@ Schema.User = new SimpleSchema({
 });
 
 Meteor.users.attachSchema(Schema.User);
+
+
+var isAdmin = function(uid) {
+	return true;
+}
+
+if (Meteor.isServer) {
+	Meteor.publish('users', function() {
+		if (isAdmin(this.userId)) {
+			return Meteor.users.find();
+		} else {
+			return Meteor.users.find({
+				_id: this.userId
+			});
+		}
+	});
+}
+
+if (Meteor.isClient) {
+	Meteor.subscribe('users');
+}

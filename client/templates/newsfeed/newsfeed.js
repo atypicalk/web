@@ -1,5 +1,4 @@
 
-
 var mw_PostsSub = null;
 Session.setDefault('itemsLimit', 10);
 Meteor.startup(function () {
@@ -7,7 +6,6 @@ Meteor.startup(function () {
     Session.set('itemsLimit', 10);
   });
   Deps.autorun(function() {
-    console.log('damn');
     mw_PostsSub = Meteor.subscribe('posts', Session.get('itemsLimit'));
   });
 });
@@ -52,6 +50,23 @@ Template.newsfeed.rendered = function() {
   if (mw_PostsSub && mw_PostsSub.ready())
     showMoreVisible();
 }
+
+Template.newsfeed.events({
+  'submit #post-form' : function(e, t) {
+    e.preventDefault();
+    var content = t.find('#content').value
+
+    Posts.createUser({email: email, password : password}, function(err){
+      if (err) {
+        // Inform the user that account creation failed
+      } else {
+        // Success. Account has been created and the user
+        // has logged in successfully. 
+      }    
+    });
+    return false;
+  }
+});
 
 // Template.newsfeed.posts = function() {
 //   return Posts.find();

@@ -43,6 +43,30 @@ mdg:camera
 lepozepo:cloudinary
 yasinuslu:blaze-meta
 aldeed:autoform
-anti:fake
 underscorestring:underscore.string
+
+# spinning loading symbol
+# https://atmospherejs.com/sacha/spin
+sacha:spin
+
+# pagination used for infinite scrolling
+# https://atmospherejs.com/tmeasday/paginated-subscription
+tmeasday:paginated-subscription
+
+# pages used for infinite scrolling
+# https://atmospherejs.com/alethes/pages
+alethes:pages
+
+# laze image loading
+# https://atmospherejs.com/luisalmeida/unveil
+luisalmeida:unveil
+
+# comment lib
+# 
+arkham:comments-ui
+
+#####################
+# Testing
 dburles:factory
+anti:fake
+practicalmeteor:faker

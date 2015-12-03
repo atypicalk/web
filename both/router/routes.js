@@ -17,6 +17,11 @@ if (Meteor.isCordova) {
 		controller: 'ProfileController'
 	});
 
+	// News Feed route
+	Router.route('/newsfeed', {
+    name: 'newsfeed'
+	});
+
 	Router.route('/admin', {
 		name: 'admin',
 		controller: 'AdminController'

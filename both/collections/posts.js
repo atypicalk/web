@@ -7,7 +7,33 @@ Posts.helpers({
 });
 
 PostsSchema = new SimpleSchema({
-    content: {
-        type: String,
+  content: {
+    type: String,
+    min: 1,
+    max: 10000
+  },
+  userId: {
+    type: String
+  },
+  placeId: {
+    type: String,
+    optional: true
+  },
+  createdAt: {
+    type: Date,
+    autoValue: function() {
+      if (this.isInsert) {
+        return new Date;
+      }
     }
+  },
+  updatedAt: {
+    type: Date,
+    label: "Date Coffee Updated in System",
+    autoValue: function() {
+      if (this.isUpdate) {
+        return new Date;
+      } 
+    }
+  }
 });
