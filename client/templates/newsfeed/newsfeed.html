@@ -1,0 +1,18 @@
+<template name="newsfeed">
+  <div class="template-newsfeed">
+    <div class="page-header">
+      <h1>News Feed</h1>
+    </div>
+
+    {{#each posts}}
+      {{> newsfeedItem}}
+    {{/each}}
+
+    {{#if moreResults}}
+      <div id="showMoreResults" style="margin-left: 25px;">
+        <span class="loading"></span>
+      </div>
+    {{/if}}
+
+  </div>
+</template>

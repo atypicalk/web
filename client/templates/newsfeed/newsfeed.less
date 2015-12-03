@@ -1,0 +1,125 @@
+@import "/client/stylesheets/mixins.import.less";
+
+@item-header-size-normal: 50px;
+@item-header-size-small: 35px;
+@item-footer-size-normal: 50px;
+@item-footer-size-small: 35px;
+
+.template-newsfeed {
+  
+  .item-container {
+    max-width: 600px;
+    background-color:orange;
+    margin: 0.5em auto;
+
+    // Item's vertical section spacing logic
+    & > div.item-vertical-section {
+      padding: 0.5rem 1rem;
+      &:first-child {
+        padding-top: 1rem;
+      }
+      &:last-child {
+        padding-bottom: 1rem;
+      }
+    }
+
+    i.fa {
+      padding-right: 0.5rem;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .item-header {
+      .user-info {
+        line-height: @item-header-size-normal;
+        display: inline-block;
+
+        a {
+          display: inline-block;
+        }
+
+        span {
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        .user-profile-photo {
+          width:50px;
+          height:50px;
+          margin-right: 0.5rem;
+          .border-radius(25px);
+        }
+      }
+
+      .item-meta {
+        line-height: @item-header-size-normal;
+        display: inline-block;
+        vertical-align: middle;
+        float:right;
+
+        span + span {
+          margin-left:0.5rem;
+        }
+
+        & > span {
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        .place {
+
+        }
+
+        .date {
+
+        }
+      }
+    }
+
+    .item-content {
+      
+    }
+
+    .item-actions {
+      height: @item-footer-size-normal;
+      ul {
+        list-style: none;
+        cursor: pointer;
+        display: table;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+
+        li {
+          display: table-cell;
+          width: 50%;
+          vertical-align: middle;
+          & > a {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            &:hover {
+              color: #aaa;
+              background-color: #bbb;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .avatar {
+    border-radius: 10em;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+
+    .image-avatar {
+      height: auto;
+      width: 100%;
+    }
+  }
+}
