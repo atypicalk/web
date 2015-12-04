@@ -11,6 +11,10 @@ Template.landingJumbotron.helpers({
 		return Session.get('email');
 	},
 
+	image: {
+		public_id: Meteor.settings.public.cloudinary.folders.landing + 'header-photo.jpg'
+	},
+
 });
 
 Template.landingJumbotron.events({
