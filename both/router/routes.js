@@ -18,6 +18,14 @@ else {
 		controller: 'ProfileController'
 	});
 
+	// Profile Route
+	Router.route('/privacypolicy', {
+		name: 'privacypolicy',
+		onAfterAction: function () {
+			window.scrollTo(0, 0);
+		}
+	});
+
 	/*Router.route('/admin', {
 		name: 'admin',
 
