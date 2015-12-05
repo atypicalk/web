@@ -71,6 +71,3 @@ arkham:comments-ui
 #####################
 # Testing
 dburles:factory
-anti:fake
-practicalmeteor:faker
-reactive-var
