@@ -44,6 +44,9 @@ lepozepo:cloudinary
 yasinuslu:blaze-meta
 aldeed:autoform
 underscorestring:underscore.string
+reactive-var
+anti:fake
+practicalmeteor:faker
 
 # spinning loading symbol
 # https://atmospherejs.com/sacha/spin
