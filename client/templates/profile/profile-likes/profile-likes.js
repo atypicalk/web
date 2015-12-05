@@ -2,11 +2,15 @@ Template.profileLikes.onCreated(function() {
 	this.editMode = new ReactiveVar(false);
 	this.addLike = new ReactiveVar(false);
 
-	this.staticLikes = Pets.findOne().profile.likes;
+	// this.staticLikes = Pets.findOne().profile.likes;
+	var userId = Meteor.userId();
+	console.log(userId);
+	console.log(Pets.find(userId).fetch());
+	this.staticLikes = Pets.find(Meteor.userId()).fetch().profile.likes;
 });
 
 Template.profileLikes.onRendered(function() {
-	
+
 });
 
 Template.profileLikes.helpers({
