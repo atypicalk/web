@@ -1,3 +1,8 @@
+Template.profile.onCreated(function() {
+	var petId = Pets.find().fetch()[0]._id;
+	Session.set('petId', petId);
+});
+
 Template.profile.onRendered(function() {
 
 });

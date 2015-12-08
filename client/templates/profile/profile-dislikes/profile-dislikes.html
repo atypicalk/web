@@ -1,0 +1,59 @@
+<template name="profileDislikes">
+	<div class="profile-dislikes col-sm-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				{{#if hasDislikes}}
+					{{#unless editMode}}<button class="btn btn-danger pull-right btn-edit-dislikes">Edit</button>{{/unless}}
+				{{/if}}
+				<h3 class="panel-title" style="line-height: 34px;">Dislikes</h3>
+			</div>
+			<div class="panel-body">
+				{{#if hasDislikes}}
+					{{#if editMode }}
+						<form class="save-dislikes" role="form">
+							<ul style="padding: 0; list-style-type: none;">
+							{{#each dislikes}}
+								<li class="form-group">
+									<div class="input-group">
+										<input type="text" class="form-control" name="thing" placeholder="What does your pet dislike?" value="{{thing}}">
+										<span class="input-group-btn">
+											<button class="btn btn-danger btn-delete-dislike" data-dislike="{{thing}}" type="button">x</button>
+										</span>
+									</div>
+								</li>
+							{{/each}}
+							</ul>
+							<div class="form-group">
+								<input type="text" class="form-control" name="thing" placeholder="What else does your pet dislike?">
+							</div>
+
+							<div class="pull-right">
+								<!-- <button class="btn btn-link btn-cancel-dislikes">Cancel</button> -->
+								<button type="submit" name="action" class="btn btn-info btn-save-dislikes">Save</button>
+							</div>
+							<!-- <button class="btn btn-link btn-add-dislike">Add +</button> -->
+						</form>
+
+					{{else}}
+						<ul style="padding: 0; list-style-type: none;">
+							{{#each dislikes}}
+								<li>
+									<span>{{thing}}</span>
+								</li>
+							{{/each}}
+						</ul>
+					{{/if}}
+				{{else}}
+						<!-- {{> quickForm collection="Pets" scope="profile.dislikes" id="insertBookForm" type="update-pushArray"}} -->
+						<form class="add-dislike" role="form">
+							<div class="form-group">
+								<input type="text" class="form-control" name="thing" placeholder="What does your pet dislike?">
+							</div>
+							<button type="submit" name="action" class="btn btn-info btn-add-dislikes">Save</button>
+						</form>
+				{{/if}}
+
+			</div>
+		</div>
+	</div>
+</template>

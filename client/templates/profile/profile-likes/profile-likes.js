@@ -1,12 +1,5 @@
 Template.profileLikes.onCreated(function() {
 	this['editMode'] = new ReactiveVar(false);
-	// this.addLike = new ReactiveVar(false);
-	console.log(Pets.find().fetch());
-	var petId = Pets.find().fetch()[0]._id;
-	Session.set('petId', petId);
-	// this.staticLikes = Pets.findOne().profile.likes;
-	var userId = Meteor.userId();
-	// this.staticLikes = Pets.find({userId: Meteor.userId()}).fetch().profile.likes;
 });
 
 Template.profileLikes.onRendered(function() {
@@ -61,7 +54,7 @@ Template.profileLikes.events({
 			}
 		});
 		console.log('save-likes submit > ',likes);
-		Meteor.call('Pets.saveLikes', petId, likes, function (error, data) {
+		Meteor.call('Pets.updateLikes', petId, likes, function (error, data) {
 			if (error) {
 				alert(error);
 				return;
@@ -84,7 +77,6 @@ Template.profileLikes.events({
 			}
 
 			console.log('add-like success! > ',like);
-			// Session.set
 		});
 	},
 
