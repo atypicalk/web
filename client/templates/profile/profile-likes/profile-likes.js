@@ -30,10 +30,10 @@ Template.profileLikes.helpers({
 });
 
 Template.profileLikes.events({
-	'click .btn-cancel-likes': function(e, template) {
-		e.preventDefault();
-		template['editMode'].set(false);
-	},
+	// 'click .btn-cancel-likes': function(e, template) {
+	// 	e.preventDefault();
+	// 	template['editMode'].set(false);
+	// },
 	'click .btn-edit-likes': function(e, template) {
 		template['editMode'].set(true);
 	},
