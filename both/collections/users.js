@@ -16,7 +16,7 @@ Schema.UserLocation = new SimpleSchema({
 	},
 	country: {
 		type: String,
-		regEx: /^[A-Z]{2}$/,
+		// regEx: /^[A-Z]{2}$/,
 		optional: true
 	}
 });

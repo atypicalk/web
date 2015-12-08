@@ -15,6 +15,23 @@ Meteor.methods({
 		}});
 	},
 
+	// PROFILE INFO
+	'Pets.updateProfileInfo': function (petId, profile) {
+		// console.log('Users.updateProfileInfo', petId, profile);
+		Pets.update({_id: petId},{$set: {
+			'profile.name': profile.name,
+			'profile.age': profile.age
+		}});
+	},
+
+	// HISTORY
+	'Pets.updateHistory': function (petId, history) {
+		// console.log('Users.updateProfileInfo', petId, profile);
+		Pets.update({_id: petId},{$set: {
+			'profile.history': history,
+		}});
+	},
+
 	// LIKES
 	'Pets.insertLike': function (petId, like) {
 		Pets.update({_id: petId}, {$push: {'profile.likes': {thing: like}}});

@@ -8,17 +8,17 @@ Template.profileDislikes.onRendered(function() {
 
 Template.profileDislikes.helpers({
 	pet: function() {
-		return Pets.find().fetch()[0];
+		return Pets.findOne();
 	},
 	dislikes: function () {
 		// return Pets.find().fetch().profile.likes;
-		return Pets.find().fetch()[0].profile.dislikes;
+		return Pets.findOne().profile.dislikes;
 	},
 	editMode: function () {
 		return Template.instance()['editMode'].get();
 	},
 	hasDislikes: function() {
-		return Pets.find().fetch()[0].profile.dislikes.length > 0;
+		return Pets.findOne().profile.dislikes.length > 0;
 	}
 });
 

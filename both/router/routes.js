@@ -15,7 +15,8 @@ if (Meteor.isCordova) {
 	// Profile Route
 	Router.route('/profile', {
 		name: 'profile',
-		controller: 'ProfileController'
+		controller: 'ProfileController',
+		loadingTemplate: 'loading',
 	});
 
 	// Profile Route
@@ -53,7 +54,7 @@ if (Meteor.isCordova) {
 		name: 'admin',
 		controller: 'AdminController'
 	});
-	
+
 	// Dashboard route
 	// Router.route('/dashboard', {
 	// 	name: 'dashboard',

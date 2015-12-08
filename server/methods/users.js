@@ -34,8 +34,8 @@ Meteor.methods({
 			'profile.lastName': profile.lastName,
 			'profile.location': profile.location,
 		}});
-
 	},
+
 	'Users.addPet': function () {
 		var userId = this.userId;
 		var petId = Pets.insert({userId: userId});

@@ -1,5 +1,7 @@
 Template.profileInfo.onCreated(function() {
 	this['editMode'] = new ReactiveVar(false);
+	this['updateUser'] = new ReactiveVar(false);
+	this['updatePet'] = new ReactiveVar(false);
 });
 
 Template.profileInfo.onRendered(function() {
@@ -39,7 +41,7 @@ Template.profileInfo.helpers({
 			return profile;
 		} else {
 			var value = profile[key];
-			return (value && value.length > 0) ? value : '--';
+			return (value && (_.isNumber(value) || value.length > 0)) ? value : '--';
 		}
 		return profile;
 	},
@@ -69,7 +71,18 @@ Template.profileInfo.events({
 			}
 		}
 
-		console.log('submittin form-info >>', userProfile);
+		var petProfile = {
+			name: target.petName.value,
+			age: target.petAge.value,
+		}
+
+		var editComplete = function () {
+			template['editMode'].set(false);
+			template['updateUser'].set(false);
+			template['updatePet'].set(false);
+		}
+
+		console.log('submitting form-info user >>', userProfile);
 		Meteor.call('Users.updateProfileInfo', userProfile, function (error) {
 			if (error) {
 				alert(error);
@@ -77,7 +90,25 @@ Template.profileInfo.events({
 			}
 
 			console.log('submit form-info >> success!', userProfile);
-			template['editMode'].set(false);
-		})
+			template['updateUser'].set(true);
+			if (template['updatePet'].get()) {
+				editComplete();
+			}
+		});
+
+		var petId = Session.get('petId');
+		console.log('submitting form-info pet >>', petId, petProfile);
+		Meteor.call('Pets.updateProfileInfo', petId, petProfile, function (error) {
+			if (error) {
+				alert(error);
+				return;
+			}
+
+			console.log('Pets.updateProfileInfo >> success!', petProfile);
+			template['updatePet'].set(true);
+			if (template['updateUser'].get()) {
+				editComplete();
+			}
+		});
 	}
 });

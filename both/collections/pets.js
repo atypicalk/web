@@ -1,5 +1,5 @@
 if (typeof Schema === 'undefined') {
-    Schema = function Schema() {}
+	Schema = function Schema() {}
 }
 
 Schema.PetProfile = new SimpleSchema({
@@ -9,6 +9,10 @@ Schema.PetProfile = new SimpleSchema({
 	},
 	breed: {
 		type: String,
+		optional: true
+	},
+	birthday: {
+		type: Date,
 		optional: true
 	},
 	age: {
@@ -24,7 +28,7 @@ Schema.PetProfile = new SimpleSchema({
 		type: String,
 		optional: true
 	},
-	bio: {
+	history: {
 		type: String,
 		optional: true
 	},

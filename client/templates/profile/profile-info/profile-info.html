@@ -15,11 +15,11 @@
 							{{#if editMode}}
 							<div class="form-group col-sm-6">
 								<label for="firstNameInput">Owner's First Name</label>
-								<input id="firstNameInput" class="form-control" placeholder="First Name" name="firstName" type="text" />
+								<input id="firstNameInput" class="form-control" placeholder="First Name" name="firstName" type="text" value="{{userProfile.firstName}}" />
 							</div>
 							<div class="form-group col-sm-6">
 								<label for="lastNameInput">Owner's Last Name</label>
-								<input id="lastNameInput" class="form-control" placeholder="Last Name" name="lastName" type="text" />
+								<input id="lastNameInput" class="form-control" placeholder="Last Name" name="lastName" type="text" value="{{userProfile.lastName}}" />
 							</div>
 							{{else}}
 							<div class="col-sm-6">
@@ -36,11 +36,11 @@
 							{{#if editMode}}
 							<div class="form-group col-sm-6">
 								<label for="petNameInput">Pet's Name</label>
-								<input id="petNameInput" class="form-control" placeholder="Pet's Name" name="petName" type="text" />
+								<input id="petNameInput" class="form-control" placeholder="Pet's Name" name="petName" type="text" value="{{petProfile.name}}" />
 							</div>
 							<div class="form-group col-sm-6">
 								<label for="petAgeInput">Pet's Age</label>
-								<input id="petAgeInput" class="form-control" placeholder="0-99" name="petAge" type="number" max="99" />
+								<input id="petAgeInput" class="form-control" placeholder="0-99" name="petAge" type="number" max="99" value="{{petProfile.age}}" />
 							</div>
 							{{else}}
 							<div class="col-sm-6">
@@ -60,11 +60,11 @@
 									{{#if editMode}}
 									<div class="form-group col-md-6">
 										<label for="cityInput">City</label>
-										<input id="cityInput" class="form-control" placeholder="City" name="city" type="text" />
+										<input id="cityInput" class="form-control" placeholder="City" name="city" type="text" value="{{userLocation.city}}" />
 									</div>
 									<div class="form-group col-md-6">
 										<label for="stateInput">State</label>
-										<input id="stateInput" class="form-control" placeholder="State" name="state" type="text" />
+										<input id="stateInput" class="form-control" placeholder="State" name="state" type="text" value="{{userLocation.state}}" />
 									</div>
 									{{else}}
 									<div class="col-sm-6">
@@ -81,11 +81,11 @@
 									{{#if editMode}}
 									<div class="form-group col-md-6">
 										<label for="zipcodeInput">Zip Code</label>
-										<input id="zipcodeInput" class="form-control" placeholder="Zip Code" name="zipcode" type="text" />
+										<input id="zipcodeInput" class="form-control" placeholder="Zip Code" name="zipcode" type="text" value="{{userLocation.zipcode}}" />
 									</div>
 									<div class="form-group col-md-6">
 										<label for="countryInput">Country</label>
-										<input id="countryInput" class="form-control" placeholder="Country" name="country" type="text" />
+										<input id="countryInput" class="form-control" placeholder="Country" name="country" type="text" value="{{userLocation.country}}" />
 									</div>
 									{{else}}
 									<div class="col-sm-6">

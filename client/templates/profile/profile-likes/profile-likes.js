@@ -8,17 +8,17 @@ Template.profileLikes.onRendered(function() {
 
 Template.profileLikes.helpers({
 	pet: function() {
-		return Pets.find().fetch()[0];
+		return Pets.findOne();
 	},
 	likes: function () {
 		// return Pets.find().fetch().profile.likes;
-		return Pets.find().fetch()[0].profile.likes;
+		return Pets.findOne().profile.likes;
 	},
 	editMode: function () {
 		return Template.instance()['editMode'].get();
 	},
 	hasLikes: function() {
-		return Pets.find().fetch()[0].profile.likes.length > 0;
+		return Pets.findOne().profile.likes.length > 0;
 	}
 });
 

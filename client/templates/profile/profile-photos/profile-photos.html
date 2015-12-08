@@ -2,12 +2,8 @@
 	<div class="profile-photos">
 		<h4 class="panel-title" style="line-height: 34px;">Photos</h4>
 		<div class="pics">
-			<div class="pet">
-				<img src="{{c.url pet.profile.photo.public_id width='200' height='200' crop='fill' radius='max' border='10px_solid_black'}}" />
-			</div>
-			<div class="owner">
-				<img src="{{c.url profile.photo.public_id width='100' height='100' crop='fill' radius='max' border='5px_solid_black'}}" />
-			</div>
+			<img class="pet" src="{{c.url pet.profile.photo.public_id width='200' height='200' crop='fill' radius='max' border='10px_solid_black'}}" />
+			<img class="owner" src="{{c.url userPic width='100' height='100' crop='fill' radius='max' border='5px_solid_black'}}" />
 		</div>
 
 		<button class="btn btn-info btn-file">

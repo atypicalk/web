@@ -9,6 +9,14 @@ Template.profilePhotos.helpers({
 	profile: function() {
 		return Meteor.user().profile;
 	},
+	userPic: function() {
+		var photo = Meteor.user().profile.photo;
+		if (!photo) {
+			return;
+		} else {
+			return photo.public_id + '.png';
+		}
+	},
 	pet: function() {
 		var pet = Pets.findOne();
 		Template.instance().pet = pet;

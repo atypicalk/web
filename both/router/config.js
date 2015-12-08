@@ -3,7 +3,7 @@ var envSettings = Meteor.settings;
 // -- Router Config --
 Router.configure({
 	controller: '_AppController',
-	loadingTemplate: 'loading',
+	// loadingTemplate: 'loading',
 	// progressSpinner: false
 });
 
