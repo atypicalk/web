@@ -1,16 +1,26 @@
 <template name="profilePhotos">
 	<div class="profile-photos">
-		<h4 class="panel-title" style="line-height: 34px;">Photos</h4>
-		<div class="pics">
-			<img class="pet" src="{{c.url pet.profile.photo.public_id width='200' height='200' crop='fill' radius='max' border='10px_solid_black'}}" />
-			<img class="owner" src="{{c.url userPic width='100' height='100' crop='fill' radius='max' border='5px_solid_black'}}" />
+		<div class="row">
+			<div class="container-fluid">
+				<h4 class="panel-title" style="line-height: 34px;">Photos</h4>
+				<div class="pics">
+					<img class="pet" src="{{c.url pet.profile.photo.public_id width='200' height='200' crop='fill' radius='max' border='10px_solid_black'}}" />
+					<img class="owner" src="{{c.url userPic width='100' height='100' crop='fill' radius='max' border='5px_solid_black'}}" />
+				</div>
+			</div>
 		</div>
 
-		<button class="btn btn-info btn-file">
-			<input name="file" type="file" class="pet-photo" />Upload Pet Photo
-		</button>
-		<button class="btn btn-info btn-file">
-			<input name="file" type="file" class="owner-photo" /> Upload Owner Photo
-		</button>
+		<div class="row">
+			<div class="col-md-6">
+				<button class="btn btn-info btn-file full-width">
+					<input name="file" type="file" class="pet-photo" />Upload Pet Photo
+				</button>
+			</div>
+			<div class="col-md-6">
+				<button class="btn btn-info btn-file full-width">
+					<input name="file" type="file" class="owner-photo" /> Upload Owner Photo
+				</button>
+			</div>
+		</div>
 	</div>
 </template>
