@@ -44,7 +44,7 @@ Schema.UserProfile = new SimpleSchema({
 		regEx: SimpleSchema.RegEx.Url,
 		optional: true
 	},
-	bio: {
+	about: {
 		type: String,
 		optional: true
 	},

@@ -24,15 +24,21 @@ Meteor.methods({
 	},
 	'Users.updateProfilePic': function(params) {
 		var photo = params.photo;
-		console.log('updateProfilePic',this.userId,photo);
+		// console.log('updateProfilePic',this.userId,photo);
 		Meteor.users.update({_id: this.userId},{$set:{'profile.photo.public_id': photo}});
 	},
 	'Users.updateProfileInfo': function (profile) {
-		console.log('Users.updateProfileInfo',this.userId,profile);
+		// console.log('Users.updateProfileInfo',this.userId,profile);
 		Meteor.users.update({_id: this.userId},{$set: {
 			'profile.firstName': profile.firstName,
 			'profile.lastName': profile.lastName,
 			'profile.location': profile.location,
+		}});
+	},
+	'Users.updateAbout': function (about) {
+		// console.log('Users.updateProfileInfo', this.userId, about);
+		Meteor.users.update({_id: this.userId},{$set: {
+			'profile.about': about
 		}});
 	},
 
