@@ -24,6 +24,7 @@ Meteor.methods({
 	},
 	'Users.updateProfilePic': function(params) {
 		var photo = params.photo;
+		console.log('updateProfilePic',this.userId,photo);
 		Meteor.users.update({_id: this.userId},{$set:{'profile.photo.public_id': photo}});
 	},
 

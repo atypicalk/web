@@ -45,11 +45,11 @@ Schema.UserProfile = new SimpleSchema({
 		type: Boolean,
 		optional: true
 	},
-	ownerPhoto: {
+	photo: {
 		type: Object,
 		optional: true
 	},
-	'ownerPhoto.public_id': {
+	'photo.public_id': {
 		type: String
 	},
 	// only 1 pet for v1 release
