@@ -1,13 +1,5 @@
 Template.profilePhotos.onRendered(function() {
-	// console.log('current user:',Meteor.user());
 
-	// Meteor.loginWithPassword('test3@petpal.com', 'omidomid', function (error) {
-	// 	if (error) {
-	// 		console.log('error loggin in!');
-	// 	} else {
-	// 		console.log('login success!', Meteor.user());
-	// 	}
-	// });
 });
 
 Template.profilePhotos.helpers({

@@ -1,0 +1,115 @@
+<template name="profileInfo">
+	<div class="profile-info">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="line-height: 34px;">Info</h3>
+			</div>
+			<div class="panel-body">
+				<div class="col-sm-6">
+					{{> profilePhotos}}
+				</div>
+				<form class="form-info" role="form">
+					<div class="col-sm-6 well">
+						{{#if editMode}}<h4>Pet &amp; Owner Info</h4>{{/if}}
+						<div class="row">
+							{{#if editMode}}
+							<div class="form-group col-sm-6">
+								<label for="firstNameInput">Owner's First Name</label>
+								<input id="firstNameInput" class="form-control" placeholder="First Name" name="firstName" type="text" />
+							</div>
+							<div class="form-group col-sm-6">
+								<label for="lastNameInput">Owner's Last Name</label>
+								<input id="lastNameInput" class="form-control" placeholder="Last Name" name="lastName" type="text" />
+							</div>
+							{{else}}
+							<div class="col-sm-6">
+								<label>Owner's First Name</label>
+								<p>{{userProfile 'firstName'}}</p>
+							</div>
+							<div class="col-sm-6">
+								<label>Owner's Last Name</label>
+								<p>{{userProfile 'lastName'}}</p>
+							</div>
+							{{/if}}
+						</div>
+						<div class="row">
+							{{#if editMode}}
+							<div class="form-group col-sm-6">
+								<label for="petNameInput">Pet's Name</label>
+								<input id="petNameInput" class="form-control" placeholder="Pet's Name" name="petName" type="text" />
+							</div>
+							<div class="form-group col-sm-6">
+								<label for="petAgeInput">Pet's Age</label>
+								<input id="petAgeInput" class="form-control" placeholder="0-99" name="petAge" type="number" max="99" />
+							</div>
+							{{else}}
+							<div class="col-sm-6">
+								<label>Pet's Name</label>
+								<p>{{petProfile 'name'}}</p>
+							</div>
+							<div class="col-sm-6">
+								<label>Pet's Age</label>
+								<p>{{petProfile 'age'}}</p>
+							</div>
+							{{/if}}
+						</div>
+						<div class="row">
+							<div class="container-fluid">
+								{{#if editMode}}<h4>Current Location</h4>{{/if}}
+								<div class="row">
+									{{#if editMode}}
+									<div class="form-group col-md-6">
+										<label for="cityInput">City</label>
+										<input id="cityInput" class="form-control" placeholder="City" name="city" type="text" />
+									</div>
+									<div class="form-group col-md-6">
+										<label for="stateInput">State</label>
+										<input id="stateInput" class="form-control" placeholder="State" name="state" type="text" />
+									</div>
+									{{else}}
+									<div class="col-sm-6">
+										<label>City</label>
+										<p>{{userLocation 'city'}}</p>
+									</div>
+									<div class="col-sm-6">
+										<label>State</label>
+										<p>{{userLocation 'state'}}</p>
+									</div>
+									{{/if}}
+								</div>
+								<div class="row">
+									{{#if editMode}}
+									<div class="form-group col-md-6">
+										<label for="zipcodeInput">Zip Code</label>
+										<input id="zipcodeInput" class="form-control" placeholder="Zip Code" name="zipcode" type="text" />
+									</div>
+									<div class="form-group col-md-6">
+										<label for="countryInput">Country</label>
+										<input id="countryInput" class="form-control" placeholder="Country" name="country" type="text" />
+									</div>
+									{{else}}
+									<div class="col-sm-6">
+										<label>Zip Code</label>
+										<p>{{userLocation 'zipcode'}}</p>
+									</div>
+									<div class="col-sm-6">
+										<label>Country</label>
+										<p>{{userLocation 'country'}}</p>
+									</div>
+									{{/if}}
+								</div>
+							</div>
+						</div>
+						<div class="pull-right">
+							{{#if editMode}}
+							<button type="submit" name="action" class="btn btn-info btn-save-info">Save</button>
+							{{else}}
+							<button class="btn btn-danger btn-edit-info">Edit</button>
+							{{/if}}
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</template>

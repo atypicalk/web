@@ -1,12 +1,23 @@
 Schema = {};
 
-Schema.UserCountry = new SimpleSchema({
-	name: {
-		type: String
-	},
-	code: {
+Schema.UserLocation = new SimpleSchema({
+	city: {
 		type: String,
-		regEx: /^[A-Z]{2}$/
+		optional: true
+	},
+	state: {
+		type: String,
+		optional: true
+	},
+	zipcode: {
+		type: String,
+		regEx: /^[0-9]{5}$/,
+		optional: true
+	},
+	country: {
+		type: String,
+		regEx: /^[A-Z]{2}$/,
+		optional: true
 	}
 });
 
@@ -37,8 +48,8 @@ Schema.UserProfile = new SimpleSchema({
 		type: String,
 		optional: true
 	},
-	country: {
-		type: Schema.UserCountry,
+	location: {
+		type: Schema.UserLocation,
 		optional: true
 	},
 	isPhantom: {
