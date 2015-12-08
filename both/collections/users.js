@@ -96,7 +96,8 @@ Schema.User = new SimpleSchema({
 	},
 	profile: {
 		type: Schema.UserProfile,
-		optional: true
+		defaultValue: {}
+		// optional: true
 	},
 	// Make sure this services field is in your schema if you're using any of the accounts packages
 	services: {
@@ -129,5 +130,6 @@ Schema.User = new SimpleSchema({
 Meteor.users.attachSchema(Schema.User);
 
 Meteor.users.before.insert(function (id, doc) {
+	console.log(id, doc);
 	doc.profile.pet = Pets.insert({userId: doc._id});
 })

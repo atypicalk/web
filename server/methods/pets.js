@@ -14,10 +14,22 @@ Meteor.methods({
 			'profile.gender': params.gender,
 		}});
 	},
-	'Pets.addLike': function (params) {
-		var petId = Pets.findOne()._id;
-		var like = params.like;
+	'Pets.insertLike': function (petId, like) {
+		// var petId = Pets.findOne()._id;
+		// var like = params.like;
 		console.log(petId,like);
 		Pets.update({_id: petId}, {$push: {'profile.likes': {thing: like}}});
+	},
+	'Pets.deleteLike': function (petId, like) {
+		// var petId = Pets.findOne()._id;
+		// var like = params.like;
+		console.log('delete',petId,like);
+		Pets.update({_id: petId}, {$pull: {'profile.likes': {thing: like}}});
+	},
+	'Pets.saveLikes': function (petId, likes) {
+		// var petId = Pets.findOne()._id;
+		// var like = params.like;
+		console.log(petId,likes);
+		Pets.update({_id: petId}, {$set: {'profile.likes': likes}});
 	}
 });

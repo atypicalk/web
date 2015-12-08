@@ -1,7 +1,7 @@
 ProfileController = _AppController.extend({
 	waitOn: function() {
-		return this.subscribe('userProfile');
-		// return this.subscribe('pets');
+		// return this.subscribe('userProfile');
+		return this.subscribe('pets');
 	},
 	data: {
 		// pets: Pets.find()
