@@ -1,37 +1,37 @@
 <template name="newsfeedItem">
   <div class="item-container" data-item-type="" data-item-id="{{_id}}">
-    <div class="item-vertical-section item-header">
-      <div class="user-info" data-user-id="{{userId}}">
-        <a href="/profile">
-          <img src="images/card1.png" class="user-profile-photo"/>
-          <span>
-            {{#if postAuthor.username}}
-              {{postAuthor.username}}
-            {{else}}
-              No Name
-            {{/if}}
-          </span>
-        </a>
-      </div>
-      <div class="item-meta">
-        {{#if postPlace}}
-          <span class="place"><a href="/"><i class="fa fa-map-marker"></i>{{postPlace.name}}</a></span>
-        {{/if}}
-        <span class="date">{{formatDate createdAt}}</span>
-      </div>
-    </div>
+	<div class="item-vertical-section item-header">
+	  <div class="user-info" data-user-id="{{userId}}">
+		<a href="/profile">
+		  <img src="images/card1.png" class="user-profile-photo"/>
+		  <span>
+			{{#if postAuthor.username}}
+			  {{postAuthor.username}}
+			{{else}}
+			  No Name
+			{{/if}}
+		  </span>
+		</a>
+	  </div>
+	  <div class="item-meta">
+		{{#if postPlace}}
+		  <span class="place"><a href="/"><i class="fa fa-map-marker"></i>{{postPlace.name}}</a></span>
+		{{/if}}
+		<!-- <span class="date">{{formatDate createdAt}}</span> -->
+	  </div>
+	</div>
 
-    <div class="item-vertical-section item-content">
-      <p>{{content}}</p>
-      <img src="images/card2.png" />
-    </div>
-    <hr class="item-vertical-divider">
-    <div class="item-vertical-section item-actions">
-      <ul>
-        <li><a class="action-barks" ><i class="fa fa-comments"></i>0</a></li>
-        <li><a class="action-comments" data-toggle="modal" data-target="#myModal"><i class="fa fa-comments"></i>23</a></li>
-      </ul>
-    </div>
+	<div class="item-vertical-section item-content">
+	  <p>{{content}}</p>
+	  <img src="images/card2.png" />
+	</div>
+	<hr class="item-vertical-divider">
+	<div class="item-vertical-section item-actions">
+	  <ul>
+		<li><a class="action-barks" ><i class="fa fa-comments"></i>0</a></li>
+		<li><a class="action-comments" data-toggle="modal" data-target="#myModal"><i class="fa fa-comments"></i>23</a></li>
+	  </ul>
+	</div>
 
   </div>
 </template>
