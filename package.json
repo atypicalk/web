@@ -3,8 +3,14 @@
   "version": "1.0.0",
   "description": "Application description.",
   "scripts": {
-    "dev": "meteor --settings settings-dev.json",
-    "stage": "modulus env set METEOR_SETTINGS \"$(cat settings-stage.json)\" -p 'petpal-stage' && modulus deploy -p 'petpal-stage'",
-    "prod": "modulus env set METEOR_SETTINGS \"$(cat settings-prod.json)\" -p 'petpal-prod' && modulus deploy -p 'petpal-prod'"
+	"dev": "meteor --settings settings-dev.json",
+	"stage": "export MONGO_URL=mongodb://getpetpal:onebillion@apollo.modulusmongo.net:27017/yxOdex6o && meteor --settings settings-stage.json",
+	"prod": "export MONGO_URL=mongodb://getpetpal:onebillion@apollo.modulusmongo.net:27017/nep2emuQ && meteor --settings settings-prod.json",
+
+	"mongo-stage": "mongo apollo.modulusmongo.net:27017/yxOdex6o -u getpetpal -p onebillion",
+	"mongo-prod": "mongo apollo.modulusmongo.net:27017/nep2emuQ -u getpetpal -p onebillion",
+
+	"deploy-stage": "modulus env set METEOR_SETTINGS \"$(cat settings-stage.json)\" -p 'petpal-stage' && modulus deploy -p 'petpal-stage'",
+	"deploy-prod": "modulus env set METEOR_SETTINGS \"$(cat settings-prod.json)\" -p 'petpal-prod' && modulus deploy -p 'petpal-prod'"
   }
 }
