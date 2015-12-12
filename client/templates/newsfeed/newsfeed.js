@@ -30,9 +30,11 @@ Template.newsfeed.helpers({
   templateNameForType: function(type) {
     console.log(type);
     if (type == 'Bark') {
-      return 'newsfeedItem';
+      return 'newsfeedItemBark';
     } else if (type == 'Product') {
-      return 'newsfeedItem';
+      return 'newsfeedItemProduct';
+    } else if (type == 'Tip') {
+      return 'newsfeedItemTip';
     } else {
       return '';
     }
@@ -59,17 +61,35 @@ Template.newsfeed.events({
       }
       var currentUserId = Meteor.userId();
       if (currentUserId) {
-        Posts.insert({content: contentVal, userId: currentUserId});
+        Posts.insert({content: contentVal, userId: currentUserId, type: 'Bark'});
       }
       $content.val('');
     }
     return false;
   },
 
-  'click input[name=content-type]:radio' : function(e, t) {
-    var currentPostType = $( event.target ).closest( "input" );
+  'click #post-product-button' : function(e, t) {
+    e.preventDefault();
+    var currentUserId = Meteor.userId();
+    if (currentUserId) {
+      Posts.insert({content: 'Product content will be here.', userId: currentUserId, type: 'Product'});
+    }
+    return false;
+  },
+
+  'click #post-tip-button' : function(e, t) {
+    e.preventDefault();
+    var currentUserId = Meteor.userId();
+    if (currentUserId) {
+      Posts.insert({content: 'Tip content will be here.', userId: currentUserId, type: 'Tip'});
+    }
+    return false;
+  },
+
+  'click button[name=content-type]' : function(e, t) {
+    var currentPostType = $( event.target ).closest( "button" );
     currentPostType.addClass( "active" );
-    // $(".nav-pills li").not(currentPostType).removeClass( "active" );
+    $(".btn-group button").not(currentPostType).removeClass( "active" );
     t.currentPostType.set(currentPostType.data("template"));
   }
 });

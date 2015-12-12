@@ -5,7 +5,29 @@
 @item-footer-size-normal: 50px;
 @item-footer-size-small: 35px;
 
-.template-newsfeed {
+.item-container {
+  max-width: 600px;
+  border: 1px solid #DDD;
+  margin: 0.5em auto;
+
+  // Item's vertical section spacing logic
+  & > div.item-vertical-section {
+    padding: 0.5rem 1rem;
+    &:first-child {
+      padding-top: 1rem;
+    }
+    &:last-child {
+      padding-bottom: 1rem;
+    }
+  }
+
+  i.fa {
+    padding-right: 0.5rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
 
   hr.item-vertical-divider {
     margin: 0 0.5rem;
@@ -13,125 +35,100 @@
     border-width: 1px;
   }
 
-  .item-container {
-    max-width: 600px;
-    border: 1px solid #DDD;
-    margin: 0.5em auto;
+  .item-header {
+    .user-info {
+      line-height: @item-header-size-normal;
+      font-weight: 900;
+      display: inline-block;
 
-    // Item's vertical section spacing logic
-    & > div.item-vertical-section {
-      padding: 0.5rem 1rem;
-      &:first-child {
-        padding-top: 1rem;
-      }
-      &:last-child {
-        padding-bottom: 1rem;
-      }
-    }
-
-    i.fa {
-      padding-right: 0.5rem;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    .item-header {
-      .user-info {
-        line-height: @item-header-size-normal;
-        font-weight: 900;
+      a {
         display: inline-block;
-
-        a {
-          display: inline-block;
-        }
-
-        span {
-          display: inline-block;
-          vertical-align: middle;
-        }
-
-        .user-profile-photo {
-          width:50px;
-          height:50px;
-          margin-right: 0.5rem;
-          .border-radius(25px);
-        }
       }
 
-      .item-meta {
-        line-height: @item-header-size-normal;
+      span {
         display: inline-block;
         vertical-align: middle;
-        float:right;
+      }
 
-        span + span {
-          margin-left:0.5rem;
-        }
-
-        & > span {
-          display: inline-block;
-          vertical-align: middle;
-        }
-
-        .place {
-          text-align:right;
-          font-weight: 700;
-          color: #d83e14;
-          .truncate-string-ellipsis(250px);
-        }
-
-        .date {
-          color:#888;
-        }
+      .user-profile-photo {
+        width:50px;
+        height:50px;
+        margin-right: 0.5rem;
+        .border-radius(25px);
       }
     }
 
-    .item-content {
+    .item-meta {
+      line-height: @item-header-size-normal;
+      display: inline-block;
+      vertical-align: middle;
+      float:right;
 
+      span + span {
+        margin-left:0.5rem;
+      }
+
+      & > span {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .place {
+        text-align:right;
+        font-weight: 700;
+        color: #d83e14;
+        .truncate-string-ellipsis(250px);
+      }
+
+      .date {
+        color:#888;
+      }
     }
+  }
 
-    .item-actions {
-      height: @item-footer-size-normal;
-      ul {
-        list-style: none;
-        cursor: pointer;
-        display: table;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
+  .item-content {
 
-        li {
-          display: table-cell;
-          width: 50%;
-          vertical-align: middle;
-          & > a {
-            display: inline-block;
-            width: 100%;
-            text-align: center;
-            &:hover {
-              color: #aaa;
-            }
+  }
+
+  .item-actions {
+    height: @item-footer-size-normal;
+    ul {
+      list-style: none;
+      cursor: pointer;
+      display: table;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: table-cell;
+        width: 50%;
+        vertical-align: middle;
+        & > a {
+          display: inline-block;
+          width: 100%;
+          text-align: center;
+          &:hover {
+            color: #aaa;
           }
         }
       }
     }
   }
+}
 
-  #post-form {
-    max-width: 600px;
-    margin: 0.5em auto;
+#post-form {
+  max-width: 600px;
+  margin: 0.5em auto;
 
-    textarea {
-      border: 1px solid #888;
-      width: 100%;
-      min-height: 150px;
-    }
+  textarea {
+    border: 1px solid #888;
+    width: 100%;
+    min-height: 150px;
   }
+}
 
-  #post-content {
+#post-content {
 
-  }
 }
