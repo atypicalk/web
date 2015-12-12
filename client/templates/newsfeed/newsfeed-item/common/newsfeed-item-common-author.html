@@ -1,0 +1,14 @@
+<template name="newsfeedItemCommonAuthor">
+  <div class="user-info" data-user-id="{{userId}}">
+    <a href="/profile">
+      <img src="images/card1.png" class="user-profile-photo"/>
+      <span>
+      {{#if postAuthor.username}}
+        {{postAuthor.username}}
+      {{else}}
+        No Name
+      {{/if}}
+      </span>
+    </a>
+  </div>
+</template>

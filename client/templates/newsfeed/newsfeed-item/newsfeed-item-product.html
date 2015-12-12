@@ -1,0 +1,13 @@
+<template name="newsfeedItemProduct">
+  <div class="item-container" data-item-type="post-product" data-item-id="{{_id}}">
+    <div class="item-vertical-section item-header">
+      {{> newsfeedItemCommonAuthor}}
+      <div class="item-meta">
+        <span class="date">{{formatDate createdAt}}</span>
+      </div>
+    </div>
+    <div class="item-vertical-section item-content">
+      <p>{{content}}</p>
+    </div>
+  </div>
+</template>
