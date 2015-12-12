@@ -11,14 +11,66 @@ Meteor.startup(function () {
 });
 Meteor.subscribe('places');
 
+Template.newsfeed.onCreated( function() {
+  this.currentPostType = new ReactiveVar("postFormBark");
+});
+
 Template.newsfeed.helpers({
   posts: function() {
-    return Posts.find().fetch();
+    return Posts.find({}, {sort: {createdAt:-1}});
   },
   // If, once the subscription is ready, we have less rows than we
   // asked for, we've got all the rows in the collection.
   moreResults: function() {
     return !(Posts.find().fetch().length < Session.get('itemsLimit'));
+  },
+  postFormType: function() {
+    return Template.instance().currentPostType.get();
+  },
+  templateNameForType: function(type) {
+    console.log(type);
+    if (type == 'Bark') {
+      return 'newsfeedItem';
+    } else if (type == 'Product') {
+      return 'newsfeedItem';
+    } else {
+      return '';
+    }
+  }
+});
+
+Template.newsfeed.rendered = function() {
+  // #showMoreVisible is always visible on first render, so only
+  // check if we've finished loading our initial data.
+  if (mw_PostsSub && mw_PostsSub.ready()) {
+    showMoreVisible();
+  }
+}
+
+Template.newsfeed.events({
+  'click #post-bark-button' : function(e, t) {
+    e.preventDefault();
+    var $content = $('textarea[name=post-content]');
+    if ($content.length) {
+      var contentVal = $content.val();
+      if (!contentVal) {
+        alert('Enter Content');
+        return;
+      }
+      var currentUserId = Meteor.userId();
+      if (currentUserId) {
+        Posts.insert({content: contentVal, userId: currentUserId});
+      }
+      $content.val('');
+    }
+    return false;
+  },
+
+  'click input[name=content-type]:radio' : function(e, t) {
+    var currentPostType = $( event.target ).closest( "input" );
+    currentPostType.addClass( "active" );
+    // $(".nav-pills li").not(currentPostType).removeClass( "active" );
+    t.currentPostType.set(currentPostType.data("template"));
   }
 });
 
@@ -39,27 +91,8 @@ function showMoreVisible() {
       console.log("target became invisible (below viewable arae)");
       target.data("visible", false);
     }
-  }        
+  }
 }
 
 // run the above func every time the user scrolls
 $(window).scroll(showMoreVisible);
-
-Template.newsfeed.rendered = function() {
-  // #showMoreVisible is always visible on first render, so only
-  // check if we've finished loading our initial data.
-  if (mw_PostsSub && mw_PostsSub.ready())
-    showMoreVisible();
-}
-
-Template.newsfeed.events({
-  'submit #post-form' : function(e, t) {
-    e.preventDefault();
-    var contentVal = $('input[name=post-content]').val();
-    var currentUser = Meteor.userId();
-    if (currentUser) {
-      Posts.insert({content: contentVal, userId: currentUser});
-    }
-    return false;
-  }
-});

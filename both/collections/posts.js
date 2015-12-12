@@ -7,6 +7,10 @@ Posts.helpers({
 });
 
 PostsSchema = new SimpleSchema({
+  type: {
+    type: String,
+    allowedValues: ['Bark', 'Product', 'Tip']
+  },
   content: {
     type: String,
     min: 1,
@@ -32,7 +36,7 @@ PostsSchema = new SimpleSchema({
     autoValue: function() {
       if (this.isUpdate) {
         return new Date;
-      } 
+      }
     }
   }
 });

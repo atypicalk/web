@@ -25,17 +25,18 @@ Meteor.startup(function() {
       newPlaces.push(newPlace);
     });
   }
-  
+
   // Create seed data for posts
   var newPosts = [];
   Factory.define('post', Posts, {
+    type: function() { return 'Bark'; },
     createdAt: function() { return new Date(); },
     content: function() { return Fake.paragraph(); },
     placeId: function() { return Fake.fromArray(newPlaces)['_id']; },
     userId: function() { return Fake.fromArray(newAccounts); }
   });
   if (Posts.find().count() === 0) {
-    _(100).times(function(n) {
+    _(30).times(function(n) {
       var newPost = Factory.create('post');
       newPosts.push(newPost)
     });

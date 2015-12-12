@@ -15,9 +15,11 @@
 	  </div>
 	  <div class="item-meta">
 		{{#if postPlace}}
-		  <span class="place"><a href="/"><i class="fa fa-map-marker"></i>{{postPlace.name}}</a></span>
+		  <span class="place">
+        <a href="/"><i class="fa fa-map-marker"></i>{{postPlace.name}}</a>
+      </span>
 		{{/if}}
-		<!-- <span class="date">{{formatDate createdAt}}</span> -->
+		<span class="date">{{formatDate createdAt}}</span>
 	  </div>
 	</div>
 
@@ -28,10 +30,17 @@
 	<hr class="item-vertical-divider">
 	<div class="item-vertical-section item-actions">
 	  <ul>
-		<li><a class="action-barks" ><i class="fa fa-comments"></i>0</a></li>
-		<li><a class="action-comments" data-toggle="modal" data-target="#myModal"><i class="fa fa-comments"></i>23</a></li>
+		<li>
+      <a class="action-barks" >
+        <i class="fa fa-comments"></i>0
+      </a>
+    </li>
+		<li>
+      <a class="action-comments" data-toggle="modal" data-target="#myModal">
+        <i class="fa fa-comments"></i>23
+      </a>
+    </li>
 	  </ul>
 	</div>
-
   </div>
 </template>

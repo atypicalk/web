@@ -1,4 +1,4 @@
-@import "/client/stylesheets/mixins.import.less";
+@import (reference) "/client/stylesheets/mixins.import.less";
 
 @item-header-size-normal: 50px;
 @item-header-size-small: 35px;
@@ -6,7 +6,7 @@
 @item-footer-size-small: 35px;
 
 .template-newsfeed {
-  
+
   hr.item-vertical-divider {
     margin: 0 0.5rem;
     display: block;
@@ -15,7 +15,7 @@
 
   .item-container {
     max-width: 600px;
-    background-color:orange;
+    border: 1px solid #DDD;
     margin: 0.5em auto;
 
     // Item's vertical section spacing logic
@@ -40,6 +40,7 @@
     .item-header {
       .user-info {
         line-height: @item-header-size-normal;
+        font-weight: 900;
         display: inline-block;
 
         a {
@@ -76,6 +77,8 @@
 
         .place {
           text-align:right;
+          font-weight: 700;
+          color: #d83e14;
           .truncate-string-ellipsis(250px);
         }
 
@@ -86,7 +89,7 @@
     }
 
     .item-content {
-      
+
     }
 
     .item-actions {
@@ -110,11 +113,25 @@
             text-align: center;
             &:hover {
               color: #aaa;
-              background-color: #bbb;
             }
           }
         }
       }
     }
+  }
+
+  #post-form {
+    max-width: 600px;
+    margin: 0.5em auto;
+
+    textarea {
+      border: 1px solid #888;
+      width: 100%;
+      min-height: 150px;
+    }
+  }
+
+  #post-content {
+
   }
 }

@@ -64,10 +64,6 @@ alethes:pages
 # https://atmospherejs.com/luisalmeida/unveil
 luisalmeida:unveil
 
-# comment lib
-#
-arkham:comments-ui
-
 #####################
 # Testing
 dburles:factory

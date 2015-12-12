@@ -5,22 +5,27 @@
     </div>
 
     <form id="post-form" action="action">
-      <div>
-        <input name="file" type="file" class="pet-photo" />
-        <input name="post-content" id="post-content" />
-        <input type="submit" id="post-button" value="Post" />
-     </div>
-   </form> 
+      <fieldset>
+        <legend>Content Type:</legend>
+        <input type="radio" name="content-type" data-template="postFormBark" checked>Bark
+        <input type="radio" name="content-type" data-template="postFormProduct">Product Review
+        <input type="radio" name="content-type" data-template="postFormTip">Tip
+      </fieldset>
+      <div id="post-content">
+        {{> Template.dynamic template=postFormType }}
+      </div>
+    </form>
 
     {{#each posts}}
-      {{> newsfeedItem}}
+      <!-- {{> newsfeedItem}} -->
+      {{> Template.dynamic template=(templateNameForType type)}}
     {{/each}}
 
     {{#if moreResults}}
-      <div id="showMoreResults" style="margin-left: 25px;">
-        <!-- <span class="loading"></span> -->
-        <div class="loading">&nbsp;</div>
-      </div>
+    <div id="showMoreResults" style="margin-left: 25px;">
+      <!-- <span class="loading"></span> -->
+      <div class="loading">&nbsp;</div>
+    </div>
     {{/if}}
 
   </div>
@@ -28,7 +33,6 @@
   <!-- Modal -->
   <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
-
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
@@ -36,23 +40,16 @@
           <h4 class="modal-title">Comment</h4>
         </div>
         <div class="modal-body">
-<!--           <p>Some text in the modal.</p>
-          <div class="item-vertical-section">
-            <ul>
-              {{#each comment}}
-                <li>{{content}}</li>
-              {{/each}}
-            </ul>
-            <div class="comment-section">
-              {{> commentsBox id=post._id}}
-            </div>
-          </div> -->
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <form id="comment-form" action="action">
+            <textarea name="comment-content" id="comment-content"></textarea>
+          </form>
+          <div class="comment-section">
+          </div>
         </div>
       </div>
-
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
     </div>
   </div>
 </template>
