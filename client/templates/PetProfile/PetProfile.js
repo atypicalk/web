@@ -1,9 +1,9 @@
 Template.PetProfile.rendered = function() {
   console.log(params);
-	if (params._id) {
-		console.log(params._id);
-	}
-	Session.set('profileUserId', params._id);
+  if (params._id) {
+    console.log(params._id);
+  }
+  Session.set('profileUserId', params._id);
   thisPetsOwnerId = 'noIdSet';
   thisPetsOwnerProfile = [];
   thisPetsUsername = 'noUserNameSet';
@@ -18,9 +18,10 @@ Template.PetProfile.rendered = function() {
     console.log("Getting data for user who owns this pet");
     console.log(error);
     thisPetsOwnerId = result._id;
-    thisPetsOwnerUsername = result.username;
+    thisPetsOwnerUsername = result.emails[0].address;// we need to switch it to username
     thisPetsOwnerProfile = result.profile;
-    profileDataLoaded = true;
+    Session.set('thisPetsOwnerUsername', thisPetsOwnerUsername);
+    Session.set('thisPetsOwnerId', thisPetsOwnerId);
     Session.set('thisPetsOwnerProfile', thisPetsOwnerProfile);
     return true;
   });
@@ -38,14 +39,14 @@ Template.PetProfile.helpers({
   This helper makes availabe the id of the owner of this pet
   */
   thisPetsOwnerId: function () {
-    return thisPetsOwnerId;
+    return Session.get('thisPetsOwnerId');
   },// End of this pets owner id
 
   /**
   This helper makes availabe the username of the owner of this pet
   */
   thisPetsOwnerUsername: function () {
-    return thisPetsOwnerUsername;
+    return Session.get('thisPetsOwnerUsername');
   }, // End of this pets owner username
 
   /**
@@ -53,5 +54,17 @@ Template.PetProfile.helpers({
   */
   thisPetsOwnerProfile: function () {
     return Session.get('thisPetsOwnerProfile');
-  } // End of this pets owner profile
+  }, // End of this pets owner profile
+  /** this helper gets the user pic.. duh
+  */
+  userPic: function() {
+    var userProfile = Session.get('thisPetsOwnerProfile');
+    if (!userProfile) return '';
+    var photo = userProfile.photo;
+    if (!photo) {
+      return;
+    } else {
+      return photo.public_id + '.png';
+    }
+  },
 });
