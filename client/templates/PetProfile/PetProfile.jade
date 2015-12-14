@@ -1,0 +1,20 @@
+template(name="PetProfile")
+  .containter-fluid
+    .row
+      .col.s6.m6
+        .card.white
+      .col.s6.m6
+        .card.white
+          .card-content
+            span.card-title
+              h3.grey-darken-5-text {{thisPet.profile.name}}
+              h6.black-text {{thisPet.profile.breed}}
+          
+            p.blue-text {{thisPetsUsername}}
+            p.light-blue-text {{thisPetsOwnerProfile.firstName}} {{thisPetsOwnerProfile.lastName}}   
+            p
+              | I am a very simple card. I am good at containing small bits of information.
+              | I am convenient because I require little markup to use effectively.
+          .card-action
+            a(href='#') This is a link
+            a(href='#') This is a link

@@ -52,5 +52,11 @@ Meteor.methods({
 	},
 	'Pets.updateDislikes': function (petId, dislikes) {
 		Pets.update({_id: petId}, {$set: {'profile.dislikes': dislikes}});
-	}
+	},
+  'Pets.PetByOwnerId': function(ownerId) {
+    console.log("Getting the pet for owner with id: " + ownerId);
+    var thisPet = Pets.findOne({userId: ownerId});
+    console.log(thisPet);
+    return thisPet;
+  }
 });

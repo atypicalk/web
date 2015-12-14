@@ -51,5 +51,19 @@ Meteor.methods({
 		var userId = this.userId;
 		Pets.remove({_id: petId});
 		Meteor.users.update({_id: userId}, {$pull: {'profile.pets': petId}});
-	}
+	},
+  'Users.getUserById' : function(userId) {
+    console.log("For the PROFILE page: Serving up the user with id" + userId);
+    return Meteor.users.findOne({_id: userId});
+  },
+  'userProfileInfo': function (userId) {
+    console.log("For the PROFILE page: Getting an object and  Serving up the user with id" + userId);
+
+    var thisUser = Meteor.users.findOne({_id: userId});
+    return {
+      thisPetsOwnerId: thisUser._id,
+      thisPetsOwnerUsername: thisUser.username,
+      thisPetsOwnerProfile:thisUser.profile
+    };
+  }
 });

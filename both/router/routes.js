@@ -18,6 +18,22 @@ if (Meteor.isCordova) {
 		controller: 'ProfileController',
 		loadingTemplate: 'loading',
 	});
+	// Profile Route
+	Router.route('/PetProfile/:_id', {
+		name: 'PetProfile',
+		controller: 'PetProfileController',
+		loadingTemplate: 'loading',
+    data: function() {
+  		pets = Pets.find();
+  		thisUser = Meteor.user();
+
+      params = this.params;
+
+      //thisPetsOwner = Users.getUserById(params._id);
+      isThisProfileCurrentUsersProfile = (this.params._id == Meteor.userId());
+      return true;
+  	}
+	});
 
 	// Profile Route
 	Router.route('/privacypolicy', {
