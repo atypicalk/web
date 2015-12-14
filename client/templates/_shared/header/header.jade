@@ -12,6 +12,15 @@ template(name='header')
           a(href='/newsfeed') News Feed
         li
           a(href='/profile') Profile (Deprecating)
+    .nav-wrapper
+      form
+        .input-field
+          input#search(type='search', required='')
+          label(for='search')
+            i.fa.fa-search
+          i.fa.fa-remove
+
+
       ul#side-nav.side-nav
         li
           a(href='/PetProfile/{{currentUser._id}}') Profile
