@@ -2,16 +2,16 @@ template(name="PetProfile")
   .containter-fluid
     .row
       .col.s6.m6
-        .card.white
+        .card.white.no-shadow.no-border
           .card-content
             .container-fluid
               .row
                 .profile-photos
                   .pics
-                    img.pet(src="{{c.url thisPet.profile.photo.public_id width='200' height='200' crop='fill' radius='max' border='5px_solid_white'}}")
-                    img.owner(src="{{c.url userPic width='100' height='100' crop='fill' radius='max' border='5px_solid_white'}}")
+                    img.pet(src="{{c.url thisPet.profile.photo.public_id width='200' height='200' crop='fill' radius='max' border='0px_solid_white'}}")
+                    img.owner(src="{{c.url userPic width='100' height='100' crop='fill' radius='max' border='0px_solid_white'}}")
       .col.s6.m6
-        .card.white
+        .card.white.no-shadow.no-border
           .card-content
             span.card-title
               h3.grey-darken-5-text {{thisPet.profile.name}}
@@ -26,3 +26,22 @@ template(name="PetProfile")
               | {{thisPetsOwnerProfile.location.city}}, {{thisPetsOwnerProfile.location.state}}
           .card-action
             button.btn.light-blue.white-text(href='#') Follow
+    .row
+    table
+      thead
+        tr
+          th.text-center
+            a(href='#')
+              i.fa.fa-paw
+          th.text-center
+            a(href='#')
+              i.fa.fa-paw
+          th.text-center
+            a(href='#')
+              i.fa.fa-paw
+          th.text-center
+            a(href='#')
+              i.fa.fa-paw
+          th.text-center
+            a(href='#')
+              i.fa.fa-paw
