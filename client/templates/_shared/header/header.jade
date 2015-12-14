@@ -3,8 +3,8 @@ template(name='header')
     .nav-wrapper    
       a.brand-logo(href='/')
         img(src='images/logo-icontext.png')
-      a.button-collapse(href='#', data-activates='side-nav')
-        i.material-icons menu
+      a.button-collapse.main-menu-icon(href='#', data-activates='side-nav')
+        i.fa.fa-bars
       ul.right.hide-on-med-and-down
         li
           a(href='/PetProfile/{{currentUser._id}}') Profile
@@ -19,6 +19,12 @@ template(name='header')
           a(href='/newsfeed') News Feed
         li
           a(href='/profile') Profile (Deprecating) 
+        li
+          a(href='#') Privacy
+        li
+          a(href='#') Settings
+        li
+          a(href='#') Policy
 //- <template name="header">
 //- 	<nav id="pp-nav" class="navbar navbar-default {{isSolid}}">
 //- 		<div class="container-fluid">

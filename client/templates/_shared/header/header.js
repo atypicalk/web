@@ -16,3 +16,6 @@ Template.header.events({
     Router.go('/');
   }
 });
+Template.header.rendered = function () {
+   $(".button-collapse").sideNav();
+}
