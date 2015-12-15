@@ -12,6 +12,9 @@ if (Meteor.isCordova) {
 		controller: 'LandingController'
 	});
 
+  Router.route('/about', {
+		name: 'about'
+	});
 	// Profile Route
 	Router.route('/profile', {
 		name: 'profile',
