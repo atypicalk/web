@@ -24,23 +24,7 @@ template(name="PetProfile")
             p.grey-text  
               i.fa.fa-map-marker
               | {{thisPetsOwnerProfile.location.city}}, {{thisPetsOwnerProfile.location.state}}
-            .row
-              .fixed-action-btn.horizontal.click-to-toggle(style='bottom: 45px; right: 24px;')
-                a.btn-floating.btn-large.red
-                  i.fa.fa-pencil
-                ul
-                  li
-                    a.btn-floating.red
-                      i.fa.fa-photo
-                  li
-                    a.btn-floating.yellow.darken-1
-                      i.fa.fa-user
-                  li
-                    a.btn-floating.green
-                      i.fa.fa-map-marker
-                  li
-                    a.btn-floating.blue
-                      i.fa.fa-quote-right
+          
 
 
             .row
@@ -51,9 +35,6 @@ template(name="PetProfile")
                 a(href='#')
                   i.fa.fa-paw
                   | 456
-                a(href='#')
-                  i.fa.fa-paw
-                  | 789
 
           .card-action.text-center
             button.btn.btn-sm.light-blue.white-text(href='#') Follow
@@ -72,51 +53,79 @@ template(name="PetProfile")
               a(href='#')
                 i.fa.fa-picture-o.fa-2x
     .row
-    ul.collection
-      li.collection-item.avatar
-        img.circle(src='http://ecx.images-amazon.com/images/I/51Npw9iELqL._SX425_.jpg', alt='')
-        span.title KONG Medium Cozie Dog Squeaky Toy
-        p
-          a(href='http://www.amazon.com/KONG-Cozie-Marvin-Moose-Medium/dp/B005AP3B8S/ref=pd_sim_199_1?ie=UTF8') Sale:	$7.69 & FREE Shipping
-          br
-          | Well, I guess it all comes down to dog personalities and training. We have many other stuffed toys that she barely notices or that have fallen apart in short order, but not this one! We feel we have more than gotten our money's worth and will buy these again!
-        a.secondary-content(href='#!')
-          i.fa.fa-external-link
-      li.collection-item.avatar
-        img.circle(src='http://s3-media2.fl.yelpcdn.com/bphoto/d4v7nxEWmn6sCD7kY2i6Eg/o.jpg', alt='')
-        span.title Del Mar Dog Beach 
-        table.orange-text
-        span.orange-text
-          i.fa.fa-star
-          i.fa.fa-star
-          i.fa.fa-star
-          i.fa.fa-star
-          i.fa.fa-star
-        p July 11, 2014
-        p
-          | I love love love this place! We were looking for a beach to just chill with our two yorkies.  The first beach we went to in Oceanside does not allow dogs so we decided to go further south.  Thanks to Yelp!  We found this place!  It's very clean and well kept.
-          i.fa.fa-external-link
-        .row
-          span.grey-text
-            a(href='#')
-              i.fa.fa-paw
-              | 123
-            a(href='#')
-              i.fa.fa-paw
-              | 456
-            a(href='#')
-              i.fa.fa-paw
-              | 789
-      li.collection-item.avatar
-        img.circle(src='http://ecx.images-amazon.com/images/I/41pbAjN4jFL._SX425_.jpg', alt='')
-        span.title Outward Hound Squeaker Matz
-        p
-          a(href='http://www.amazon.com/KONG-Cozie-Marvin-Moose-Medium/dp/B005AP3B8S/ref=pd_sim_199_1?ie=UTF8') $9.99 & FREE Shipping
-          br
-          | The stuffed animal was larger than I thought - maybe 2 feet long and 4-5 inches wide. My 43 lb, 6 month old puppy destroyed it the first evening after it came in the mail. I'm not saying it was poorly made being that puppies are tenacious at their destructive skills. All the the stuffing in the head was pulled out, the eyes were plucked off, most of the squeakers were destroyed. The good news - she had a lot of fun doing it.
-        a.secondary-content(href='#!')
-          i.fa.fa-external-link
-          
+      ul.collection
+        li.collection-item.avatar
+          img.circle(src='http://ecx.images-amazon.com/images/I/51Npw9iELqL._SX425_.jpg', alt='')
+          span.title KONG Medium Cozie Dog Squeaky Toy
+          p
+            a(href='http://www.amazon.com/KONG-Cozie-Marvin-Moose-Medium/dp/B005AP3B8S/ref=pd_sim_199_1?ie=UTF8') Sale:	$7.69 & FREE Shipping
+            br
+            | Well, I guess it all comes down to dog personalities and training. We have many other stuffed toys that she barely notices or that have fallen apart in short order, but not this one! We feel we have more than gotten our money's worth and will buy these again!
+          a.secondary-content(href='#!')
+            i.fa.fa-external-link
+        li.collection-item.avatar
+          img.circle(src='http://s3-media2.fl.yelpcdn.com/bphoto/d4v7nxEWmn6sCD7kY2i6Eg/o.jpg', alt='')
+          span.title Del Mar Dog Beach 
+          table.orange-text
+          span.orange-text
+            i.fa.fa-star
+            i.fa.fa-star
+            i.fa.fa-star
+            i.fa.fa-star
+            i.fa.fa-star
+          p July 11, 2014
+          p
+            | I love love love this place! We were looking for a beach to just chill with our two yorkies.  The first beach we went to in Oceanside does not allow dogs so we decided to go further south.  Thanks to Yelp!  We found this place!  It's very clean and well kept.
+            i.fa.fa-external-link
+          .row
+            span.grey-text
+              a(href='#')
+                i.fa.fa-paw
+                | 123
+              a(href='#')
+                i.fa.fa-paw
+                | 456
+              a(href='#')
+                i.fa.fa-paw
+                | 789
+        li.collection-item.avatar
+          img.circle(src='http://ecx.images-amazon.com/images/I/41pbAjN4jFL._SX425_.jpg', alt='')
+          span.title Outward Hound Squeaker Matz
+          p
+            a(href='http://www.amazon.com/KONG-Cozie-Marvin-Moose-Medium/dp/B005AP3B8S/ref=pd_sim_199_1?ie=UTF8') $9.99 & FREE Shipping
+            br
+            | The stuffed animal was larger than I thought - maybe 2 feet long and 4-5 inches wide. My 43 lb, 6 month old puppy destroyed it the first evening after it came in the mail. I'm not saying it was poorly made being that puppies are tenacious at their destructive skills. All the the stuffing in the head was pulled out, the eyes were plucked off, most of the squeakers were destroyed. The good news - she had a lot of fun doing it.
+          a.secondary-content(href='#!')
+            i.fa.fa-external-link
+    .row
+      // go to news feed
+      .fixed-action-btn.vertical.click-to-toggle(style='bottom: 45px; right:40px;')
+        a.btn-floating.btn-large.light-blue
+          i.fa.fa-newspaper-o
+      // go to profile
+      .fixed-action-btn.vertical.click-to-toggle(style='bottom: 45px; right:140px;')
+        a.btn-floating.btn-large.light-blue
+          i.fa.fa-paw
+      // add content
+      .fixed-action-btn.veritcal.click-to-toggle(style='bottom: 45px; right:240px;')
+        a.btn-floating.btn-large.light-blue
+          i.fa.fa-pencil
+        ul
+          li
+          // Modal Trigger
+            a.waves-effect.waves-light.light-blue.btn.modal-trigger(href='#comment-modal') Modal
+              i.fa.fa-comment-o
+          li
+            a.btn-floating.light-blue 
+              i.fa.fa-photo   
+    
+// Modal Structure
+#comment-modal.modal.bottom-sheet
+  .modal-content
+    h4 Modal Header
+    p A bunch of text
+  .modal-footer
+    a.modal-action.modal-close.waves-effect.waves-green.btn-flat(href='#!') Agree
 
 
 
